@@ -28,6 +28,9 @@
     <Compile Include="engine\color.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="engine\drawable.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="engine\dummysprite.py">
       <SubType>Code</SubType>
     </Compile>
@@ -37,10 +40,16 @@
     <Compile Include="engine\physics.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="engine\world.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="engine\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="RogueClicker.py" />
+    <Compile Include="test.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="engine\" />

@@ -15,8 +15,7 @@ class Game(object):
     self.win = None
     self.clock = pg.time.Clock()
 
-    self.statSprites = pg.sprite.LayeredDirty()
-    self.dynSprites = pg.sprite.LayeredDirty()
+    self.currDrawing = None
 
   def init(self):
     pg.init()
@@ -58,9 +57,8 @@ class Game(object):
       else:
         dt = self.clock.tick(120)
 
-        pg.display.update(self.statSprites.draw(self.win, self.win))
-
-        pg.display.update(self.dynSprites.draw(self.win, self.win))
+        if self.currDrawing != None:
+          self.currDrawing.draw(dt)
 
         pg.display.flip()
 
