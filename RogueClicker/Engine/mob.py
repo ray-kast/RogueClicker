@@ -1,4 +1,4 @@
-from engine.entity import *
+﻿from engine.entity import *
 
 class Mob(Entity):
   def __init__(self, *groups):
@@ -6,6 +6,9 @@ class Mob(Entity):
 
     self.isOnGround = False
     self.__pos__ = [0, 0]
+
+    self.walkDir = 0
+    self.isJumping = False
 
   @property
   def Pos(self):
