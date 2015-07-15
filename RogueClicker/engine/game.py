@@ -44,22 +44,27 @@ class Game(object):
 
     self.clock.tick()
 
-    while True:
-      event = pg.event.poll()
-      if event.type != pg.NOEVENT:
-        if event.type == pg.QUIT:
-          break
+    doRun = True
+    while doRun:
+      dt = self.clock.tick(120)
+      
+      for event in pg.event.get():
+
+        if event.type != pg.NOEVENT:
+          if event.type == pg.QUIT:
+            doRun = False
         
-        elif event.type == pg.KEYDOWN:
-          if event.key == pg.K_ESCAPE:
-            break
+          elif event.type == pg.KEYDOWN:
+            if event.key == pg.K_ESCAPE:
+              doRun = False
 
-      else:
-        dt = self.clock.tick(120)
+          else: self.currDrawing.event(event, dt)
 
-        if self.currDrawing != None:
-          self.currDrawing.draw(dt)
+      if not doRun: break
 
-        pg.display.flip()
+      if self.currDrawing != None:
+        self.currDrawing.draw(dt)
+
+      pg.display.flip()
 
     self.deinit()
