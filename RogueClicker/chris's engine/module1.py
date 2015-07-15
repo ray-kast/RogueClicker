@@ -55,12 +55,10 @@ class Player():
         self.surface.fill([0,0,255])
         self.rect = self.surface.get_rect()
         self.speed = 50
-        self.jumpspeed = 50
         self.left = False
         self.right = False
         self.up = False
         self.down = False
-        self.gravity = 10
     def move_left(self):
         self.posistion[0] -= self.speed
         self.draw()
@@ -68,11 +66,7 @@ class Player():
         self.posistion[0] += self.speed
         self.draw()
     def move_up(self):
-        self.posistion[1] -= self.jumpspeed
-        if self.jump != -50:
-            self.jumpspeed -= self.gravity
-            self.jumpspeed = 50
-            self.up = False
+        self.posistion[1] -= self.speed
         self.draw() 
     def move_down(self):
         self.posistion[1] += self.speed
@@ -85,5 +79,4 @@ engine = Engine()
 while engine.game_running:
     engine.check_input()
     engine.player.draw()
-    
     
