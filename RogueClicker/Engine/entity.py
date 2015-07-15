@@ -1,4 +1,4 @@
-import pygame as pg
+﻿import pygame as pg
 
 class Entity(pg.sprite.DirtySprite):
   def __init__(self, *groups):

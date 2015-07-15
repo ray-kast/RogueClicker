@@ -1,7 +1,7 @@
 ﻿import pygame as pg
 from engine.color import *
 
-class Game(object):
+class Game:
   __curr__ = None
 
   def __new__(cls):
@@ -49,7 +49,6 @@ class Game(object):
       dt = self.clock.tick(120)
       
       for event in pg.event.get():
-
         if event.type != pg.NOEVENT:
           if event.type == pg.QUIT:
             doRun = False
@@ -58,13 +57,19 @@ class Game(object):
             if event.key == pg.K_ESCAPE:
               doRun = False
 
-          else: self.currDrawing.event(event, dt)
+          else:
+            doRun = self.currDrawing.event(event, dt)
+            if not doRun: break
 
       if not doRun: break
 
-      if self.currDrawing != None:
-        self.currDrawing.draw(dt)
+      if not self.draw(): break
 
       pg.display.flip()
 
     self.deinit()
+
+  def draw(self):
+    if self.currDrawing != None:
+      self.currDrawing.draw(dt)
+
