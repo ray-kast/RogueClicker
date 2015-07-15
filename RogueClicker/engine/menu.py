@@ -7,12 +7,11 @@ class Menu(Drawable):
      self.surf = surf
      self.menuitemclicked = False
      self.buttons = []
-    #TODO: Add construction code here
+
   def add(self, btn):
-    
     self.buttons.append(btn)
 
-  def event(self, event, dt):
+  def event(self, event, game, dt):
     if event.type == pg.MOUSEBUTTONDOWN:
       pos = pg.mouse.get_pos()
       for button in self.buttons:
@@ -20,21 +19,27 @@ class Menu(Drawable):
           button.click()
           break
 
-  def draw(self, dt):
+  def draw(self, game, dt):
     self.surf.fill((0, 0, 0))
 
     for button in self.buttons:
-      button.draw(dt)
-
+      button.draw(game, dt)
 
   class Button(Drawable):
-    def __init__(self, menu, backgroundcolor, textcolor, text, size, location):
+    def __init__(self, menu, cmd, bkgd, fore, text, pos, size):
       Drawable.__init__(self, menu.surf)
 
-      self.rect = pg.Rect(location, size)
+      menu.add(self)
 
-      self.bkgd = backgroundcolor
+      self.rect = pg.Rect(pos, size)
 
-    def draw(self, dt):
+      self.cmd = cmd
+
+      self.fore = fore
+      self.bkgd = bkgd
+
+    def draw(self, game, dt):
       self.surf.fill(self.bkgd, self.rect)
-        
+
+    def click(self):
+      self.cmd(self)

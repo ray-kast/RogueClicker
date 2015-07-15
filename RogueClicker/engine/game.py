@@ -14,7 +14,8 @@ class Game:
     self.scrRect = pg.Rect(0, 0, 0, 0)
     self.win = None
     self.clock = pg.time.Clock()
-
+    
+    self.doQuit = False
     self.currDrawing = None
 
   def init(self):
@@ -35,6 +36,9 @@ class Game:
   def deinit(self):
     pg.quit()
 
+  def postQuit(self):
+    self.doQuit = True
+
   def run(self):
     self.init()
         
@@ -42,32 +46,30 @@ class Game:
 
     self.clock.tick()
 
-    doRun = True
-    while doRun:
+    while True:
       dt = self.clock.tick(120)
       
       for event in pg.event.get():
-        if event.type != pg.NOEVENT:
-          if event.type == pg.QUIT:
-            doRun = False
+        if event.type == pg.QUIT:
+          self.postQuit()
         
-          elif event.type == pg.KEYDOWN:
-            if event.key == pg.K_ESCAPE:
-              doRun = False
+        elif event.type == pg.KEYDOWN:
+          if event.key == pg.K_ESCAPE:
+            self.postQuit()
 
-          else:
-            doRun = self.currDrawing.event(event, dt)
-            if not doRun: break
+        else: self.currDrawing.event(event, self, dt)
 
-      if not doRun: break
-
-      if not self.draw(): break
+      if self.doQuit: break
+      
+      self.draw(dt)
 
       pg.display.flip()
 
+      if self.doQuit: break
+
     self.deinit()
 
-  def draw(self):
+  def draw(self, dt):
     if self.currDrawing != None:
-      self.currDrawing.draw(dt)
+      self.currDrawing.draw(self, dt)
 

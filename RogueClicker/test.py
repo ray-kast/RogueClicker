@@ -12,6 +12,14 @@ class TestGame(Game):
 
     self.menu = Menu(self.win)
 
+    self.menuBtn1 = Menu.Button(self.menu,
+                                lambda btn: print(btn),
+                                Colors.CornflowerBlue,
+                                Colors.Black,
+                                "Click!",
+                                (10, 10),
+                                (100, 32))
+
     self.world = World(self.win)
 
     self.currDrawing = self.menu

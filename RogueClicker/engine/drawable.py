@@ -2,8 +2,8 @@
   def __init__(self, surf):
     self.surf = surf
 
-  def draw(self, dt):
+  def draw(self, game, dt):
     pass
 
-  def event(self, event, dt):
+  def event(self, event, game, dt):
     return False
