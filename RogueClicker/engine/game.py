@@ -32,8 +32,6 @@ class Game:
 
     self.win = pg.display.set_mode(self.scrRect.size, flags)
 
-    pg.mouse.set_visible(False)
-
   def deinit(self):
     pg.quit()
 
