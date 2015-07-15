@@ -28,6 +28,9 @@
     <Compile Include="engine\color.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="engine\drawable.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="engine\dummysprite.py">
       <SubType>Code</SubType>
     </Compile>

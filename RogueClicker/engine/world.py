@@ -1,6 +1,7 @@
+from engine.drawable import *
 import pygame as pg
 
-class World:
+class World(Drawable):
   def __init__(self, surf):
     self.surf = surf
 
