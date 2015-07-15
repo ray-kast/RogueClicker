@@ -37,7 +37,7 @@
     <Compile Include="engine\physics.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="engine\__init__.py">
+    <Compile Include="engine\__init_move__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="RogueClicker.py" />
