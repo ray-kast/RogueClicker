@@ -22,19 +22,15 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Engine\engine.py">
+    <Compile Include="chris%27s engine\module1.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\_game.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Engine\_physobj.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="RogueClicker.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Engine\" />
+    <Folder Include="chris%27s engine\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chris%27s engine\bla.png" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
