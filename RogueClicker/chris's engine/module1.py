@@ -5,7 +5,6 @@ import time
 clock = pygame.time.Clock()
 class Engine():
     def __init__(self):
-        print("hello")
         pygame.display.init()
         infoObject = pygame.display.Info()
         self.screen = pygame.display.set_mode((infoObject.current_w, infoObject.current_h), pygame.FULLSCREEN)
@@ -56,10 +55,12 @@ class Player():
         self.surface.fill([0,0,255])
         self.rect = self.surface.get_rect()
         self.speed = 50
+        self.jumpspeed = 50
         self.left = False
         self.right = False
         self.up = False
         self.down = False
+        self.gravity = 10
     def move_left(self):
         self.posistion[0] -= self.speed
         self.draw()
@@ -67,7 +68,11 @@ class Player():
         self.posistion[0] += self.speed
         self.draw()
     def move_up(self):
-        self.posistion[1] -= self.speed
+        self.posistion[1] -= self.jumpspeed
+        if self.jump != -50:
+            self.jumpspeed -= self.gravity
+            self.jumpspeed = 50
+            self.up = False
         self.draw() 
     def move_down(self):
         self.posistion[1] += self.speed
