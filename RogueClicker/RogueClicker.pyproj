@@ -22,10 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Engine\game.py">
+    <Compile Include="Engine\engine.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\PhysObject.py">
+    <Compile Include="Engine\_game.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\_physobj.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="RogueClicker.py" />
