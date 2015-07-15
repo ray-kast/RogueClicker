@@ -13,9 +13,10 @@ class TestGame(Game):
     self.menu = Menu(self.win)
 
     self.menuBtn1 = Menu.Button(self.menu,
-                                lambda btn: print(btn),
-                                Colors.CornflowerBlue,
-                                Colors.Black,
+                                lambda btn: self.postQuit(),
+                                (Colors.CornflowerBlue, Colors.Black),
+                                (Colors.Green, Colors.Black),
+                                (Colors.White, Colors.Black),
                                 "Click!",
                                 (10, 10),
                                 (100, 32))

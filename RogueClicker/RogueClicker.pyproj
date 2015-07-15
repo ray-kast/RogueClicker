@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\fonts\" />
+    <Folder Include="assets\sounds\" />
     <Folder Include="assets\sprites\" />
     <Folder Include="chris%27s engine\" />
     <Folder Include="engine\" />
