@@ -40,7 +40,7 @@
     <Compile Include="engine\menu.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="engine\physics.py">
+    <Compile Include="engine\sprite.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="engine\world.py">
