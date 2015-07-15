@@ -37,6 +37,9 @@
     <Compile Include="engine\game.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="engine\menu.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="engine\physics.py">
       <SubType>Code</SubType>
     </Compile>
