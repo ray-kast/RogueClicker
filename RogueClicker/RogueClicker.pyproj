@@ -31,6 +31,9 @@
     <Compile Include="Engine\_physobj.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RogueClicker.py" />
   </ItemGroup>
   <ItemGroup>
