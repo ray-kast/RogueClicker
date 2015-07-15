@@ -12,6 +12,9 @@
     <OutputPath>.</OutputPath>
     <Name>RogueClicker</Name>
     <RootNamespace>RogueClicker</RootNamespace>
+    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
+    <InterpreterVersion>3.2</InterpreterVersion>
+    <IsWindowsApplication>True</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,26 +25,29 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="chris%27s engine\module1.py">
+    <Compile Include="engine\color.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\_game.py">
+    <Compile Include="engine\dummysprite.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\_physobj.py">
+    <Compile Include="engine\game.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\__init__.py">
+    <Compile Include="engine\physics.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="engine\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="RogueClicker.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="chris%27s engine\bla.png" />
+    <Folder Include="engine\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="chris%27s engine\" />
-    <Folder Include="Engine\" />
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.2" />
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.4" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
