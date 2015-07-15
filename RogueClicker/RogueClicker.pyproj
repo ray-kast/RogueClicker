@@ -40,7 +40,13 @@
     <Compile Include="engine\menu.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="engine\sprite.py">
+    <Compile Include="engine\entity.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="engine\mob.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="engine\player.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="engine\world.py">
@@ -55,11 +61,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\fonts\" />
     <Folder Include="engine\" />
+    <Folder Include="assets\" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.2" />
-    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.4" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,11 +12,12 @@ class World(Drawable):
 
   def updatePhys(self, dt):
     for sprite in self.dynSprites:
-      print(pg.sprite.spritecollide(sprite,
-                                    self.envSprites[0],
-                                    self.envSprites,
-                                    False, 
-                                    lambda a, b: pg.sprite.collide_mask(a, b)))
+      print(sprite)
+      #print(pg.sprite.spritecollide(sprite,
+      #                              self.envSprites[0],
+      #                              self.envSprites,
+      #                              False, 
+      #                              lambda a, b: pg.sprite.collide_mask(a, b)))
     pass
 
   def draw(self, dt):
