@@ -1,4 +1,4 @@
-from engine.drawable import *
+﻿from engine.drawable import *
 import pygame as pg
 
 class World(Drawable):
@@ -8,6 +8,17 @@ class World(Drawable):
     self.bkgdSprites = pg.sprite.LayeredDirty()
     self.envSprites = pg.sprite.LayeredDirty()
     self.dynSprites = pg.sprite.LayeredDirty()
+
+
+  def updatePhys(self, dt):
+    for sprite in self.dynSprites:
+      print(sprite)
+      #print(pg.sprite.spritecollide(sprite,
+      #                              self.envSprites[0],
+      #                              self.envSprites,
+      #                              False, 
+      #                              lambda a, b: pg.sprite.collide_mask(a, b)))
+    pass
 
   def draw(self, dt):
     self.bkgdSprites.update(dt)
