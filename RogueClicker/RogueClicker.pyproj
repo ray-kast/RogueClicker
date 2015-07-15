@@ -25,6 +25,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="chris%27s engine\menu.py" />
+    <Compile Include="chris%27s engine\module1.py" />
     <Compile Include="engine\color.py">
       <SubType>Code</SubType>
     </Compile>
@@ -63,6 +65,7 @@
   <ItemGroup>
     <Folder Include="assets\fonts\" />
     <Folder Include="assets\sprites\" />
+    <Folder Include="chris%27s engine\" />
     <Folder Include="engine\" />
     <Folder Include="assets\" />
   </ItemGroup>
@@ -73,6 +76,8 @@
     <Content Include="assets\fonts\uni0553.ttf" />
     <Content Include="assets\sprites\test.png" />
     <Content Include="assets\sprites\test.png" />
+    <Content Include="chris%27s engine\bla.png" />
+    <Content Include="chris%27s engine\Thumbs.db" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
