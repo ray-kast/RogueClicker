@@ -18,6 +18,14 @@ class TestGame(Game):
     hover = ((125, 122, 106), Colors.White)
     act = ((209, 55, 2), Colors.White)
 
+    rect = pg.Rect(0, 8, 320, 48)
+
+    xc = 1
+    yc = 3
+
+    x = self.scrRect.centerx - (rect.right * xc - rect.left) / 2
+    y = self.scrRect.centery - (rect.bottom * yc - rect.top) / 2
+
     Menu.Button(self.menu,
                 lambda btn: None,
                 norm,
@@ -25,8 +33,8 @@ class TestGame(Game):
                 act,
                 self.font,
                 "Play",
-                (8, 8),
-                (320, 48))
+                (x, y),
+                rect.size)
 
     Menu.Button(self.menu,
                 lambda btn: None,
@@ -35,8 +43,8 @@ class TestGame(Game):
                 act,
                 self.font,
                 "Options",
-                (8, 64),
-                (320, 48))
+                (x, y + rect.bottom),
+                rect.size)
 
     Menu.Button(self.menu,
                 lambda btn: self.postQuit(),
@@ -45,8 +53,8 @@ class TestGame(Game):
                 act,
                 self.font,
                 "Quit",
-                (8, 120),
-                (320, 48))
+                (x, y + rect.bottom * 2),
+                rect.size)
 
     self.world = World(self.win)
 

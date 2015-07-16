@@ -26,10 +26,7 @@ class Game:
     self.scrRect.width = info.current_w
     self.scrRect.height = info.current_h
 
-    flags = pg.HWSURFACE | pg.DOUBLEBUF
-
-    if not __debug__:
-      flags |= pg.FULLSCREEN
+    flags = pg.HWSURFACE | pg.DOUBLEBUF | pg.FULLSCREEN
 
     self.win = pg.display.set_mode(self.scrRect.size, flags)
 
