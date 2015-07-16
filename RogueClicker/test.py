@@ -14,9 +14,9 @@ class TestGame(Game):
 
     self.menu = Menu(self.win)
 
-    norm = ((99, 98, 87), Colors.White)
+    norm = ((99, 98, 87), Colors.Black)
     hover = ((125, 122, 106), Colors.White)
-    act = ((209, 55, 2), Colors.Black)
+    act = ((209, 55, 2), Colors.White)
 
     Menu.Button(self.menu,
                 lambda btn: None,
