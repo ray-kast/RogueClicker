@@ -1,7 +1,8 @@
 ﻿from engine.dummysprite import *
 from engine.game import *
-from engine.world import *
 from engine.menu import *
+from engine.player import *
+from engine.world import *
 
 class TestGame(Game):
   def __init__(self):
@@ -58,6 +59,8 @@ class TestGame(Game):
 
     self.world = World(self.win)
 
-    self.currDrawing = self.menu
+    self.player = Player([200, 200], "assets\\sprites\\test.png", self.world.dynSprites)
 
-    self.dummysprite = DummySprite((10, 10), self.world.bkgdSprites)
+    self.currDrawing = self.world
+
+    #self.dummysprite = DummySprite((10, 10), self.world.bkgdSprites)

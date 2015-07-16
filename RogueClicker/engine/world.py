@@ -9,18 +9,10 @@ class World(Drawable):
     self.envSprites = pg.sprite.LayeredDirty()
     self.dynSprites = pg.sprite.LayeredDirty()
 
-
   def updatePhys(self, dt):
-    for sprite in self.dynSprites:
-      print(sprite)
-      #print(pg.sprite.spritecollide(sprite,
-      #                              self.envSprites[0],
-      #                              self.envSprites,
-      #                              False, 
-      #                              lambda a, b: pg.sprite.collide_mask(a, b)))
     pass
 
-  def draw(self, dt):
+  def draw(self, game, dt):
     self.bkgdSprites.update(dt)
 
     pg.display.update(self.bkgdSprites.draw(self.surf, self.surf))

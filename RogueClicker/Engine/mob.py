@@ -1,8 +1,8 @@
 ﻿from engine.entity import *
 
 class Mob(Entity):
-  def __init__(self, *groups):
-    Entity.__init__(self, *groups)
+  def __init__(self, pos, img, *groups):
+    Entity.__init__(self, pos, img, *groups)
 
     self.isOnGround = False
     self.__pos__ = [0, 0]
