@@ -59,7 +59,7 @@ class TestGame(Game):
 
     self.world = World(self.win)
 
-    self.player = Player([200, 200], "assets\\sprites\\test.png", self.world.dynSprites)
+    self.player = Player([200, 200], self.world.dynSprites)
 
     self.currDrawing = self.world
 

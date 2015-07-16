@@ -2,4 +2,4 @@
 
 class Player(Mob):
   def __init__(self, pos, *groups):
-    Mob.__init__(self, pos, ", *groups)
+    Mob.__init__(self, pos, "assets\\sprites\\test.png", *groups)
