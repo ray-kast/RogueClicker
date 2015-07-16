@@ -10,16 +10,33 @@ class TestGame(Game):
   def init(self):
     Game.init(self)
 
+    self.font = pg.font.Font("assets\\fonts\\uni0553.ttf", 8)
+
     self.menu = Menu(self.win)
 
-    self.menuBtn1 = Menu.Button(self.menu,
-                                lambda btn: self.postQuit(),
-                                (Colors.CornflowerBlue, Colors.Black),
-                                (Colors.Green, Colors.Black),
-                                (Colors.White, Colors.Black),
-                                "Click!",
-                                (10, 10),
-                                (100, 32))
+    norm = ((99, 98, 87, 255), Colors.Black)
+    hover = ((211, 102, 32), Colors.Black)
+    act = ((166, 91, 19), Colors.Black)
+
+    Menu.Button(self.menu,
+                lambda btn: None,
+                norm,
+                hover,
+                act,
+                self.font,
+                "Click!",
+                (10, 10),
+                (100, 32))
+
+    Menu.Button(self.menu,
+                lambda btn: None,
+                norm,
+                hover,
+                act,
+                self.font,
+                "Click 2!",
+                (10, 52),
+                (100, 32))
 
     self.world = World(self.win)
 
