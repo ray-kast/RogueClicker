@@ -1,6 +1,6 @@
-﻿from engine.drawable import *
-import pygame as pg
-import pygame.gfxdraw as gd
+﻿import numpy as np, pygame as pg, pygame.gfxdraw as gd
+from engine.color import *
+from engine.drawable import *
 
 class Menu(Drawable):
   def __init__(self, surf):
@@ -54,7 +54,8 @@ class Menu(Drawable):
       self.font = font
       self.text = text
 
-      self.textSurf = None
+      self.textSurf = self.font.render(text, False, (0, 0, 0))
+      self.textPos = np.subtract(self.rect.center, self.textSurf.get_rect().center)
 
       self.colors = self.normal
       self.isHovered = False
@@ -97,14 +98,14 @@ class Menu(Drawable):
     def draw(self, game, dt):
       self.surf.fill(self.colors[0], self.rect)
 
+      self.surf.blit(self.textSurf, self.textPos)
+
     def mouseDown(self):
-      #self.colors = self.active
       pass
 
     def mouseUp(self):
       if self.IsHovered:
         self.cmd(self)
-      #self.colors = self.hover if self.isHovered else self.normal
 
     def mouseOver(self):
       pass

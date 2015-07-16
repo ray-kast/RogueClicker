@@ -25,8 +25,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="chris%27s engine\menu.py" />
-    <Compile Include="chris%27s engine\module1.py" />
     <Compile Include="engine\color.py">
       <SubType>Code</SubType>
     </Compile>
@@ -66,7 +64,6 @@
     <Folder Include="assets\fonts\" />
     <Folder Include="assets\sounds\" />
     <Folder Include="assets\sprites\" />
-    <Folder Include="chris%27s engine\" />
     <Folder Include="engine\" />
     <Folder Include="assets\" />
   </ItemGroup>
@@ -74,11 +71,12 @@
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.2" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\fonts\coders_crux.ttf" />
+    <Content Include="assets\fonts\FreePixel.ttf" />
+    <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
     <Content Include="assets\fonts\uni0553.ttf" />
     <Content Include="assets\sprites\test.png" />
     <Content Include="assets\sprites\test.png" />
-    <Content Include="chris%27s engine\bla.png" />
-    <Content Include="chris%27s engine\Thumbs.db" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
