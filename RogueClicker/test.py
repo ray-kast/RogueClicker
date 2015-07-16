@@ -28,7 +28,7 @@ class TestGame(Game):
     y = self.scrRect.centery - (rect.bottom * yc - rect.top) / 2
 
     Menu.Button(self.menu,
-                lambda btn: None,
+                self.play,
                 norm,
                 hover,
                 act,
@@ -61,6 +61,11 @@ class TestGame(Game):
 
     self.player = Player([200, 200], self.world.dynSprites)
 
-    self.currDrawing = self.world
+    self.currDrawing = self.menu
 
     #self.dummysprite = DummySprite((10, 10), self.world.bkgdSprites)
+
+  def play(self, btn):
+    self.win.fill(Colors.Green)
+
+    self.currDrawing = self.world
