@@ -10,9 +10,6 @@ class World(Drawable):
     self.envSprites = pg.sprite.LayeredUpdates()
     self.dynSprites = pg.sprite.LayeredUpdates()
 
-  def updatePhys(self, dt):
-    pass
-
   def draw(self, game, dt):
     self.surf.fill(Colors.Green)
 

@@ -11,4 +11,10 @@ class Mob(Entity):
     self.isJumping = False
 
   def update(self, dt):
-    self.vel = np.multiply((self.walkDir, -1 if self.isJumping else 0), .1)
+    
+    self.vel[0] = self.walkDir
+    self.vel[1] = -1 if self.isJumping else 0
+
+    self.vel *= .5
+
+    Entity.update(self, dt)
