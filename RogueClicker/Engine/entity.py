@@ -52,7 +52,7 @@ class DynEntity(Entity):
     """Updates the entity every frame"""
     self.vel[1] += .001 * dt
 
-    self.vel[0] *= .5 ** (dt * (.1 if self.isOnGround else .01))
+    self.vel[0] *= .5 ** (dt * (.1 if self.isOnGround else .001))
 
     Entity.update(self, dt)
 
