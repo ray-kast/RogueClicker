@@ -2,15 +2,18 @@
 from engine.color import *
 
 class Game:
+  """Encapsulates the base logic of a game"""
   __curr__ = None
 
   def __new__(cls):
+    """Creates exactly one instance of Game"""
     if Game.__curr__ == None:
       Game.__curr__ = super(Game, cls).__new__(cls)
 
     return Game.__curr__
 
   def __init__(self):
+    """Initializes the current instance of Game"""
     self.scrRect = pg.Rect(0, 0, 0, 0)
     self.win = None
     self.clock = pg.time.Clock()
@@ -19,6 +22,7 @@ class Game:
     self.currDrawing = None
 
   def init(self):
+    """Performs initialization at the start of the game"""
     pg.init()
 
     info = pg.display.Info()
@@ -31,12 +35,15 @@ class Game:
     self.win = pg.display.set_mode(self.scrRect.size, flags)
 
   def deinit(self):
+    """Performs cleanup at the end of the game"""
     pg.quit()
 
   def postQuit(self):
+    """Post a request for the game to quit"""
     self.doQuit = True
 
   def run(self):
+    """Launch the game"""
     self.init()
         
     self.win.fill(Colors.Green)
@@ -58,15 +65,12 @@ class Game:
 
       if self.doQuit: break
       
-      self.draw(dt)
+      if self.currDrawing != None:
+        self.currDrawing.draw(self, dt)
 
       pg.display.flip()
 
       if self.doQuit: break
 
     self.deinit()
-
-  def draw(self, dt):
-    if self.currDrawing != None:
-      self.currDrawing.draw(self, dt)
 

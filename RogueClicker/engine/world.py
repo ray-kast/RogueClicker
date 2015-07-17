@@ -3,14 +3,17 @@ from engine.color import *
 import pygame as pg
 
 class World(Drawable):
+  """Manages the player, entities, and environment of the levels"""
   def __init__(self, surf):
-    self.surf = surf
+    """Create a new instance of World"""
+    Drawable.__init__(self, surf)
 
     self.bkgdSprites = pg.sprite.LayeredUpdates()
     self.envSprites = pg.sprite.LayeredUpdates()
     self.dynSprites = pg.sprite.LayeredUpdates()
 
   def draw(self, game, dt):
+    """Called when the attached Game draws a frame"""
     self.surf.fill(Colors.Green)
 
     self.bkgdSprites.update(dt)
