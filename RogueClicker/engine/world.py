@@ -14,6 +14,8 @@ class World(Drawable):
 
   def draw(self, game, dt):
     self.bkgdSprites.update(dt)
+    self.envSprites.update(dt)
+    self.dynSprites.update(dt)
 
     pg.display.update(self.bkgdSprites.draw(self.surf, self.surf))
 

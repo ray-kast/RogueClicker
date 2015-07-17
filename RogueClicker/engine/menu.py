@@ -20,16 +20,18 @@ class Menu(Drawable):
         button.IsHovered = button.rect.collidepoint(pos)
 
     elif event.type == pg.MOUSEBUTTONDOWN:
-      pos = pg.mouse.get_pos()
-      for button in self.buttons:
-        if button.IsHovered:
-          button.IsActive = True
+      if event.button == 1:
+        pos = pg.mouse.get_pos()
+        for button in self.buttons:
+          if button.IsHovered:
+            button.IsActive = True
 
     elif event.type == pg.MOUSEBUTTONUP:
-      pos = pg.mouse.get_pos()
-      for button in self.buttons:
-        if button.IsHovered or button.IsActive:
-          button.IsActive = False
+      if event.button == 1:
+        pos = pg.mouse.get_pos()
+        for button in self.buttons:
+          if button.IsHovered or button.IsActive:
+            button.IsActive = False
 
   def draw(self, game, dt):
     self.surf.fill((0, 0, 0))
@@ -37,9 +39,9 @@ class Menu(Drawable):
     for button in self.buttons:
       button.draw(game, dt)
 
-  class Button(Drawable):
+  class Button:
     def __init__(self, menu, cmd, normal, hover, active, font, text, pos, size):
-      Drawable.__init__(self, menu.surf)
+      self.surf = menu.surf
 
       menu.add(self)
 

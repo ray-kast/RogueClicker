@@ -1,16 +1,17 @@
-import pygame as pg
+﻿import pygame as pg
 from engine.color import *
+from engine.entity import *
 
-class DummySprite(pg.sprite.DirtySprite):
+class DummySprite(Entity):
   def __init__(self, pos, *groups):
-    pg.sprite.DirtySprite.__init__(self, *groups)
+    surf = pg.Surface((100, 100), pg.HWSURFACE | pg.SRCALPHA)
 
-    self.image = pg.Surface((100, 100), pg.HWSURFACE | pg.SRCALPHA)
+    surf.fill(Colors.Black)
 
-    self.image.fill(Colors.Black)
+    Entity.__init__(self, pos, surf, 1, *groups)
 
-    self.source_rect = self.image.get_rect()
+    #self.source_rect = self.image.get_rect()
 
-    self.rect = self.source_rect
+    #self.rect = self.source_rect
 
-    self.rect.topleft = pos
+    #self.rect.topleft = pos

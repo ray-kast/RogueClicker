@@ -43,7 +43,7 @@ class TestGame(Game):
                 hover,
                 act,
                 self.font,
-                "Options",
+                "  Options",
                 (x, y + rect.bottom),
                 rect.size)
 
@@ -59,11 +59,11 @@ class TestGame(Game):
 
     self.world = World(self.win)
 
-    self.player = Player([200, 200], self.world.dynSprites)
+    self.player = Player((200, 200), self.world.dynSprites)
+
+    self.dummysprite = DummySprite((10, 10), self.world.bkgdSprites)
 
     self.currDrawing = self.menu
-
-    #self.dummysprite = DummySprite((10, 10), self.world.bkgdSprites)
 
   def play(self, btn):
     self.win.fill(Colors.Green)
