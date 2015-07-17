@@ -8,6 +8,16 @@ class TestGame(Game):
   def __init__(self):
     Game.__init__(self)
 
+  def doBlocks(self, blocks, size):
+    surf = pg.Surface((size, size))
+
+    surf.fill(Colors.Black)
+    
+    ents = []
+    
+    for block in blocks:
+      ents.append(Entity(self.world, np.multiply(block, size), (0, 0), surf, 1, self.world.envSprites))
+
   def init(self):
     Game.init(self)
 
@@ -59,18 +69,18 @@ class TestGame(Game):
 
     self.world = World(self.win)
 
-    self.player = Player(self.world, (210, 210), (0, 0), self.world.dynSprites)
+    self.player = Player(self.world, (110, 110), (0, 0), self.world.dynSprites)
 
     surf = pg.Surface((100, 100))
 
     surf.fill(Colors.Black)
 
-    self.boxes = [
-      Entity(self.world, (200, 100), (0, 0), surf, 1, self.world.envSprites),
-      Entity(self.world, (100, 200), (0, 0), surf, 1, self.world.envSprites),
-      Entity(self.world, (300, 200), (0, 0), surf, 1, self.world.envSprites),
-      Entity(self.world, (200, 300), (0, 0), surf, 1, self.world.envSprites),
-    ]
+    self.blocks = self.doBlocks([
+      (1, 2),
+      (2, 2),
+      (3, 2),
+      (4, 1)
+    ], 100)
 
     self.currDrawing = self.menu
 

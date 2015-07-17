@@ -30,7 +30,7 @@ class Entity(pg.sprite.Sprite):
 
   @Pos.setter
   def Pos(self, value):
-    #"""Gets or sets the position of the entity"""
+    """Gets or sets the position of the entity"""
     self.pos = value
 
     self.dirty = 1
@@ -52,4 +52,8 @@ class DynEntity(Entity):
     """Updates the entity every frame"""
     self.vel[1] += .001 * dt
 
+    self.vel[0] *= .5 ** (dt * (.1 if self.isOnGround else .01))
+
     Entity.update(self, dt)
+
+    self.isOnGround = False

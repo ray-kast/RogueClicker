@@ -8,14 +8,12 @@ class Player(Mob):
     self.initPos = self.pos.copy()
     self.initVel = self.vel.copy()
 
-  def update(self, dt, dMouse):
+  def update(self, dt):
     keys = pg.key.get_pressed()
 
     self.walkDir = keys[pg.K_d] - keys[pg.K_a]
 
     self.isJumping = keys[pg.K_SPACE]
-
-    self.vel.__iadd__(np.multiply(dMouse, dt * .001))
 
     Mob.update(self, dt)
 
