@@ -60,8 +60,6 @@ class TestGame(Game):
 
     self.player = Player(self.world, (200, 200), (0, 0), self.world.dynSprites)
 
-    #self.dummysprite = DummySprite((10, 10), self.world.bkgdSprites)
-
     self.currDrawing = self.menu
 
   def play(self, btn):

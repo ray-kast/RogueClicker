@@ -115,24 +115,12 @@ class Menu(Drawable):
     def mouseOut(self):
       pass
 
-  class Image(Drawable):
+  class Image:
     def __init__(self, menu, img, pos):
-      Drawable.__init__(self, menu.surf)
+      self.surf = menu.surf
 
       self.pos = pos
       self.img = pg.image.load(img)
 
     def draw(self):
       self.surf.blit(self.img, self.pos)
-
-class gameOverMenu():
-    def __init__(self):
-        pg.font.init()
-        self.font=pg.font.SysFont("Free Pixel", 2)
-
-    def GameOver(self, menu,  surf, text, pos):
-        self.rendering=self.font.render(text, 0, [255,255,255])
-        menu.surf.blit(self.rendering, pos)
-        pg.display.init()
-        pg.display.update()
-        
