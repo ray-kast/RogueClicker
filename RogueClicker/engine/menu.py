@@ -1,6 +1,6 @@
 ﻿import numpy as np, pygame as pg, pygame.gfxdraw as gd
-from engine.color import *
-from engine.drawable import *
+from Engine.color import *
+from Engine.drawable import *
 
 class Menu(Drawable):
   def __init__(self, surf):
@@ -123,4 +123,16 @@ class Menu(Drawable):
       self.img = pg.image.load(img)
 
     def draw(self):
-      self.surf.blit(self.limg, self.pos)
+      self.surf.blit(self.img, self.pos)
+
+class gameOverMenu():
+    def __init__(self):
+        pg.font.init()
+        self.font=pg.font.SysFont("Free Pixel", 2)
+
+    def GameOver(self, menu,  surf, text, pos):
+        self.rendering=self.font.render(text, 0, [255,255,255])
+        menu.surf.blit(self.rendering, pos)
+        pg.display.init()
+        pg.display.update()
+        
