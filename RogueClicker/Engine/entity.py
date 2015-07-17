@@ -10,8 +10,8 @@ class Entity(pg.sprite.Sprite):
 
     self.source_rect = self.image.get_rect()
 
-    self.pos = np.array(pos)
-    self.vel = np.array(vel)
+    self.pos = np.array(pos, dtype = np.float)
+    self.vel = np.array(vel, dtype = np.float)
     self.size = self.source_rect.size
 
   @property
@@ -33,3 +33,12 @@ class Entity(pg.sprite.Sprite):
 
   def draw(self, surf, dt):
     surf.blit(self.image, self.rect.topleft)
+    
+class DynEntity(Entity):
+  def __init__(self, world, pos, vel, surf, scl, *groups):
+    Entity.__init__(self, world, pos, vel, surf, scl, *groups)
+
+  def update(self, dt):
+    self.vel[1] += .001 * dt
+
+    Entity.update(self, dt)

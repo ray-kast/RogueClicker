@@ -26,8 +26,6 @@ class TestGame(Game):
     x = self.scrRect.centerx - (rect.right * xc - rect.left) / 2
     y = self.scrRect.centery - (rect.bottom * yc - rect.top) / 2
 
-    Menu.Image(self.menu, "assets\\sprites\\test.png", (10, 10))
-
     Menu.Button(self.menu,
                 self.play,
                 norm,
@@ -44,7 +42,7 @@ class TestGame(Game):
                 hover,
                 act,
                 self.font,
-                "Options",
+                "  Options",
                 (x, y + rect.bottom),
                 rect.size)
 
@@ -61,6 +59,8 @@ class TestGame(Game):
     self.world = World(self.win)
 
     self.player = Player(self.world, (200, 200), (0, 0), self.world.dynSprites)
+
+    #self.dummysprite = DummySprite((10, 10), self.world.bkgdSprites)
 
     self.currDrawing = self.menu
 
