@@ -116,9 +116,11 @@ class Menu(Drawable):
       pass
 
   class Image(Drawable):
-    def __init__(self, img, pos):
+    def __init__(self, menu, img, pos):
+      Drawable.__init__(self, menu.surf)
+
       self.pos = pos
-      self.img = pygame.image.load(img)
+      self.img = pg.image.load(img)
 
     def draw(self):
       self.surf.blit(self.limg, self.pos)
