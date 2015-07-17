@@ -31,9 +31,6 @@
     <Compile Include="engine\drawable.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="engine\dummysprite.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="engine\game.py">
       <SubType>Code</SubType>
     </Compile>
@@ -75,6 +72,8 @@
     <Content Include="assets\fonts\FreePixel.ttf" />
     <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
     <Content Include="assets\fonts\uni0553.ttf" />
+    <Content Include="assets\sprites\Player.png" />
+    <Content Include="assets\sprites\playerWalk.png" />
     <Content Include="assets\sprites\test.png" />
     <Content Include="assets\sprites\test.png" />
   </ItemGroup>

@@ -4,11 +4,11 @@ from Engine.drawable import *
 
 class Menu(Drawable):
   def __init__(self, surf):
-      Drawable.__init__(self, surf)
-      self.surf = surf
-      self.menuitemclicked = False
-      self.buttons = []
-      self.active = None
+     Drawable.__init__(self, surf)
+     self.surf = surf
+     self.menuitemclicked = False
+     self.buttons = []
+     self.active = None
 
   def add(self, btn):
     self.buttons.append(btn)
@@ -116,12 +116,14 @@ class Menu(Drawable):
       pass
 
   class Image(Drawable):
-    def __init__(self, imagepath, pos):
-      self.img = imagepath
+    def __init__(self, menu, img, pos):
+      Drawable.__init__(self, menu.surf)
+
       self.pos = pos
+      self.img = pg.image.load(img)
+
     def draw(self):
-      self.limg = pygame.image.load(self.img)
-      self.limg.blit(self.surf, self.pos)
+      self.surf.blit(self.img, self.pos)
 
 class gameOverMenu():
     def __init__(self):

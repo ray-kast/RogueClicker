@@ -1,7 +1,4 @@
 ﻿import traceback
-from engine.dummysprite import *
-from engine.game import *
-from engine.world import *
 from test import *
 
 try:
