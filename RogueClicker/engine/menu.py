@@ -1,14 +1,14 @@
 ﻿import numpy as np, pygame as pg, pygame.gfxdraw as gd
-from engine.color import *
-from engine.drawable import *
+from Engine.color import *
+from Engine.drawable import *
 
 class Menu(Drawable):
   def __init__(self, surf):
-     Drawable.__init__(self, surf)
-     self.surf = surf
-     self.menuitemclicked = False
-     self.buttons = []
-     self.active = None
+      Drawable.__init__(self, surf)
+      self.surf = surf
+      self.menuitemclicked = False
+      self.buttons = []
+      self.active = None
 
   def add(self, btn):
     self.buttons.append(btn)
@@ -122,3 +122,15 @@ class Menu(Drawable):
     def draw(self):
       self.limg = pygame.image.load(self.img)
       self.limg.blit(self.surf, self.pos)
+
+class gameOverMenu():
+    def __init__(self):
+        pg.font.init()
+        self.font=pg.font.SysFont("Free Pixel", 2)
+
+    def GameOver(self, menu,  surf, text, pos):
+        self.rendering=self.font.render(text, 0, [255,255,255])
+        menu.surf.blit(self.rendering, pos)
+        pg.display.init()
+        pg.display.update()
+        
