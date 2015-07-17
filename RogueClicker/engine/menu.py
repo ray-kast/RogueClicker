@@ -114,3 +114,11 @@ class Menu(Drawable):
 
     def mouseOut(self):
       pass
+
+  class Image(Drawable):
+    def __init__(self, imagepath, pos):
+      self.img = imagepath
+      self.pos = pos
+    def draw(self):
+      self.limg = pygame.image.load(self.img)
+      self.limg.blit(self.surf, self.pos)
