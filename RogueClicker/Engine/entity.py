@@ -6,14 +6,29 @@ class Entity(pg.sprite.DirtySprite):
 
     self.image = pg.transform.scale(surf, np.multiply(surf.get_rect().size, scl))
 
-    self.rect = self.source_rect = self.image.get_rect()
+    self.source_rect = self.image.get_rect()
 
-    self.move(pos)
+    self.pos = pos
+    self.size = self.source_rect.size
 
-  def move(self, pos):
-    self.rect = pg.Rect(pos, self.rect.size)
+  @property
+  def rect(self):
+    return pg.Rect(self.pos, self.size)
+
+  @property
+  def Pos(self):
+    return self.pos
+
+  @Pos.setter
+  def Pos(self, value):
+    self.pos = value
 
     self.dirty = 1
+
+  def update(self, dt):
+    self.Pos = np.add(self.Pos, (dt * .1, 0))
+
+    
 
   def draw(self, surf, dt):
     surf.blit(self.image, self.rect.topleft)
