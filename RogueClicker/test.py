@@ -1,4 +1,5 @@
-﻿from engine.game import *
+﻿from engine.entity import *
+from engine.game import *
 from engine.menu import *
 from engine.player import *
 from engine.world import *
@@ -58,7 +59,18 @@ class TestGame(Game):
 
     self.world = World(self.win)
 
-    self.player = Player(self.world, (200, 200), (0, 0), self.world.dynSprites)
+    self.player = Player(self.world, (210, 210), (0, 0), self.world.dynSprites)
+
+    surf = pg.Surface((100, 100))
+
+    surf.fill(Colors.Black)
+
+    self.boxes = [
+      Entity(self.world, (200, 100), (0, 0), surf, 1, self.world.envSprites),
+      Entity(self.world, (100, 200), (0, 0), surf, 1, self.world.envSprites),
+      Entity(self.world, (300, 200), (0, 0), surf, 1, self.world.envSprites),
+      Entity(self.world, (200, 300), (0, 0), surf, 1, self.world.envSprites),
+    ]
 
     self.currDrawing = self.menu
 
