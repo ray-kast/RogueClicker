@@ -73,7 +73,10 @@
     <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
     <Content Include="assets\fonts\uni0553.ttf" />
     <Content Include="assets\sprites\player.png" />
+    <Content Include="assets\sprites\playerCrouch.png" />
+    <Content Include="assets\sprites\playerInAir.png" />
     <Content Include="assets\sprites\playerJumping.png" />
+    <Content Include="assets\sprites\playerPistol.png" />
     <Content Include="assets\sprites\playerWalk.png" />
     <Content Include="assets\sprites\test.png" />
     <Content Include="assets\sprites\test.png" />
