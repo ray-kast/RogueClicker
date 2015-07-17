@@ -15,6 +15,8 @@ class Entity(pg.sprite.Sprite):
     self.pos = np.array(pos, dtype = np.float)
     self.vel = np.array(vel, dtype = np.float)
     self.size = self.source_rect.size
+    
+    self.lastRect = self.rect
 
   @property
   def rect(self):
@@ -28,13 +30,14 @@ class Entity(pg.sprite.Sprite):
 
   @Pos.setter
   def Pos(self, value):
-    #"""Gets or sets the position of the entity"""
+    """Gets or sets the position of the entity"""
     self.pos = value
 
     self.dirty = 1
 
   def update(self, dt):
     """Updates the entity every frame"""
+    #self.lastRect = self.rect
     self.pos += self.vel * dt
 
 class DynEntity(Entity):
@@ -43,8 +46,14 @@ class DynEntity(Entity):
     """Creates a new instance of DynEntity"""
     Entity.__init__(self, world, pos, vel, surf, scl, *groups)
 
+    self.isOnGround = False
+
   def update(self, dt):
     """Updates the entity every frame"""
     self.vel[1] += .001 * dt
 
+    self.vel[0] *= .5 ** (dt * (.1 if self.isOnGround else .001))
+
     Entity.update(self, dt)
+
+    self.isOnGround = False

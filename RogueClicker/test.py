@@ -1,4 +1,5 @@
-﻿from engine.game import *
+﻿from engine.entity import *
+from engine.game import *
 from engine.menu import *
 from engine.player import *
 from engine.world import *
@@ -6,6 +7,16 @@ from engine.world import *
 class TestGame(Game):
   def __init__(self):
     Game.__init__(self)
+
+  def doBlocks(self, blocks, size):
+    surf = pg.Surface((size, size))
+
+    surf.fill(Colors.Black)
+    
+    ents = []
+    
+    for block in blocks:
+      ents.append(Entity(self.world, np.multiply(block, size), (0, 0), surf, 1, self.world.envSprites))
 
   def init(self):
     Game.init(self)
@@ -58,7 +69,23 @@ class TestGame(Game):
 
     self.world = World(self.win)
 
-    self.player = Player(self.world, (200, 200), (0, 0), self.world.dynSprites)
+    self.player = Player(self.world, (110, 110), (0, 0), self.world.dynSprites)
+
+    surf = pg.Surface((100, 100))
+
+    surf.fill(Colors.Black)
+
+    self.blocks = self.doBlocks([
+      (1, 4),
+      (2, 4),
+      (3, 4),
+      (4, 3),
+      (5, 4),
+      (6, 5),
+      (7, 4),
+      (7, 3),
+      (7, 2),
+    ], 100)
 
     self.currDrawing = self.menu
 
