@@ -44,7 +44,7 @@ class TestGame(Game):
                 hover,
                 act,
                 self.font,
-                "  Options",
+                "Options",
                 (x, y + rect.bottom),
                 rect.size)
 
