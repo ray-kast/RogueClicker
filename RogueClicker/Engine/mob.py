@@ -1,10 +1,14 @@
-﻿from engine.entity import *
+﻿import numpy as np
+from engine.entity import *
 
 class Mob(Entity):
-  def __init__(self, pos, surf, scl, *groups):
-    Entity.__init__(self, pos, surf, scl, *groups)
+  def __init__(self, world, pos, vel, surf, scl, *groups):
+    Entity.__init__(self, world, pos, vel, surf, scl, *groups)
 
     self.isOnGround = False
 
     self.walkDir = 0
     self.isJumping = False
+
+  def update(self, dt):
+    self.vel = np.multiply((self.walkDir, -1 if self.isJumping else 0), .1)

@@ -31,9 +31,6 @@
     <Compile Include="engine\drawable.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="engine\dummysprite.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="engine\game.py">
       <SubType>Code</SubType>
     </Compile>

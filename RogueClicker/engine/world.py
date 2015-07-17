@@ -1,24 +1,25 @@
 ﻿from engine.drawable import *
+from engine.color import *
 import pygame as pg
 
 class World(Drawable):
   def __init__(self, surf):
     self.surf = surf
 
-    self.bkgdSprites = pg.sprite.LayeredDirty()
-    self.envSprites = pg.sprite.LayeredDirty()
-    self.dynSprites = pg.sprite.LayeredDirty()
+    self.bkgdSprites = pg.sprite.LayeredUpdates()
+    self.envSprites = pg.sprite.LayeredUpdates()
+    self.dynSprites = pg.sprite.LayeredUpdates()
 
   def updatePhys(self, dt):
     pass
 
   def draw(self, game, dt):
+    self.surf.fill(Colors.Green)
+
     self.bkgdSprites.update(dt)
     self.envSprites.update(dt)
     self.dynSprites.update(dt)
 
-    pg.display.update(self.bkgdSprites.draw(self.surf, self.surf))
-
-    pg.display.update(self.envSprites.draw(self.surf, self.surf))
-
-    pg.display.update(self.dynSprites.draw(self.surf, self.surf))
+    self.bkgdSprites.draw(self.surf)
+    self.envSprites.draw(self.surf)
+    self.dynSprites.draw(self.surf)

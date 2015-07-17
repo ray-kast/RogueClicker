@@ -1,14 +1,17 @@
 ﻿import numpy as np, pygame as pg
 
-class Entity(pg.sprite.DirtySprite):
-  def __init__(self, pos, surf, scl, *groups):
-    pg.sprite.DirtySprite.__init__(self, *groups)
+class Entity(pg.sprite.Sprite):
+  def __init__(self, world, pos, vel, surf, scl, *groups):
+    pg.sprite.Sprite.__init__(self, *groups)
+    
+    self.world = world
 
     self.image = pg.transform.scale(surf, np.multiply(surf.get_rect().size, scl))
 
     self.source_rect = self.image.get_rect()
 
-    self.pos = pos
+    self.pos = np.array(pos)
+    self.vel = np.array(vel)
     self.size = self.source_rect.size
 
   @property
@@ -26,9 +29,7 @@ class Entity(pg.sprite.DirtySprite):
     self.dirty = 1
 
   def update(self, dt):
-    self.Pos = np.add(self.Pos, (dt * .1, 0))
-
-    
+    self.pos += self.vel * dt
 
   def draw(self, surf, dt):
     surf.blit(self.image, self.rect.topleft)
