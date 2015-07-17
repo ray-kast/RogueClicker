@@ -61,6 +61,7 @@
     <Folder Include="assets\fonts\" />
     <Folder Include="assets\sounds\" />
     <Folder Include="assets\sprites\" />
+    <Folder Include="assets\sprites\walkFrames\" />
     <Folder Include="engine\" />
     <Folder Include="assets\" />
   </ItemGroup>
@@ -80,6 +81,15 @@
     <Content Include="assets\sprites\playerWalk.png" />
     <Content Include="assets\sprites\test.png" />
     <Content Include="assets\sprites\test.png" />
+    <Content Include="assets\sprites\walkFrames\playerWalk.png" />
+    <Content Include="assets\sprites\walkFrames\Player_F0.png" />
+    <Content Include="assets\sprites\walkFrames\Player_F1.png" />
+    <Content Include="assets\sprites\walkFrames\Player_F2.png" />
+    <Content Include="assets\sprites\walkFrames\Player_F3.png" />
+    <Content Include="assets\sprites\walkFrames\Player_F4.png" />
+    <Content Include="assets\sprites\walkFrames\Player_F5.png" />
+    <Content Include="assets\sprites\walkFrames\Player_F6.png" />
+    <Content Include="assets\sprites\walkFrames\Player_F7.png" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
