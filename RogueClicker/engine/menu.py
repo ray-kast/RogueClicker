@@ -1,6 +1,6 @@
 ﻿import numpy as np, pygame as pg, pygame.gfxdraw as gd
-from Engine.color import *
-from Engine.drawable import *
+from engine.color import *
+from engine.drawable import *
 
 class Menu(Drawable):
   def __init__(self, surf):
