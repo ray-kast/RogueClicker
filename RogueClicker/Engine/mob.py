@@ -6,6 +6,5 @@ class Mob(Entity):
 
     self.isOnGround = False
 
-    self.walkX = 0
-    self.walkY = 0
+    self.walkDir = 0
     self.isJumping = False
