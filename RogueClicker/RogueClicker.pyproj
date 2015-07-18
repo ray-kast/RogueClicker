@@ -60,9 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\fonts\" />
-    <Folder Include="assets\shootFrames\" />
     <Folder Include="assets\sounds\" />
     <Folder Include="assets\sprites\" />
+    <Folder Include="assets\sprites\Blocks\" />
+    <Folder Include="assets\sprites\shootFrames\" />
     <Folder Include="assets\sprites\walkFrames\" />
     <Folder Include="engine\" />
     <Folder Include="assets\" />
@@ -76,16 +77,21 @@
     <Content Include="assets\fonts\FreePixel.ttf" />
     <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
     <Content Include="assets\fonts\uni0553.ttf" />
-    <Content Include="assets\shootFrames\playerPistol_f0.png" />
-    <Content Include="assets\shootFrames\playerPistol_f1.png" />
-    <Content Include="assets\shootFrames\playerPistol_f2.png" />
-    <Content Include="assets\shootFrames\Thumbs.db" />
+    <Content Include="assets\sprites\Blocks\metalBlock32x32.png" />
+    <Content Include="assets\sprites\Blocks\metalBlock64x32.png" />
+    <Content Include="assets\sprites\Blocks\metalBlock96x96.png" />
+    <Content Include="assets\sprites\Blocks\metalPillar32x64.png" />
+    <Content Include="assets\sprites\Blocks\metalSheet32x32.png" />
+    <Content Include="assets\sprites\Blocks\metalSheet96x96.png" />
     <Content Include="assets\sprites\player.png" />
     <Content Include="assets\sprites\playerCrouch.png" />
     <Content Include="assets\sprites\playerInAir.png" />
     <Content Include="assets\sprites\playerJumping.png" />
     <Content Include="assets\sprites\playerPistol.png" />
     <Content Include="assets\sprites\playerWalk.png" />
+    <Content Include="assets\sprites\shootFrames\playerPistol_f0.png" />
+    <Content Include="assets\sprites\shootFrames\playerPistol_f1.png" />
+    <Content Include="assets\sprites\shootFrames\playerPistol_f2.png" />
     <Content Include="assets\sprites\test.png" />
     <Content Include="assets\sprites\test.png" />
     <Content Include="assets\sprites\walkFrames\playerWalk.png" />
