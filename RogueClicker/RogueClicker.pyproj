@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\fonts\" />
+    <Folder Include="assets\shootFrames\" />
     <Folder Include="assets\sounds\" />
     <Folder Include="assets\sprites\" />
     <Folder Include="assets\sprites\walkFrames\" />
@@ -75,6 +76,10 @@
     <Content Include="assets\fonts\FreePixel.ttf" />
     <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
     <Content Include="assets\fonts\uni0553.ttf" />
+    <Content Include="assets\shootFrames\playerPistol_f0.png" />
+    <Content Include="assets\shootFrames\playerPistol_f1.png" />
+    <Content Include="assets\shootFrames\playerPistol_f2.png" />
+    <Content Include="assets\shootFrames\Thumbs.db" />
     <Content Include="assets\sprites\player.png" />
     <Content Include="assets\sprites\playerCrouch.png" />
     <Content Include="assets\sprites\playerInAir.png" />
