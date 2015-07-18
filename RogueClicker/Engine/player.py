@@ -9,20 +9,30 @@ class Player(Mob):
     self.crouchImg = pg.image.load("assets\\sprites\\playerCrouch.png")
 
     Mob.__init__(self, world, pos, vel, self.defImg, 1, *groups)
+
+    self.walkFrame = []
+    self.loadWalk()
+    self.i = 0
+
     self.initPos = self.pos.copy()
     self.initVel = self.vel.copy()
     self.inAir = False
 
   def update(self, dt):
+    if self.i >= 8: self.i = 0
+
     keys = pg.key.get_pressed()
 
     self.walkDir = keys[pg.K_d] - keys[pg.K_a]
 
     self.isJumping = keys[pg.K_SPACE]
+    self.image = self.defImg if not self.isJumping else self.jumpImg 
+    
     if self.isJumping: self.inAir = True
     if self.isOnGround: self.inAir = False
-
-    self.image = self.defImg if not self.isJumping else self.jumpImg 
+    
+    if self.walkDir > 0:
+      self.image = self.walkFrame[self.i]
     
     if self.inAir: self.image = self.crouchImg
 
@@ -31,3 +41,9 @@ class Player(Mob):
     if not self.world.rect.colliderect(self.rect):
       self.pos = self.initPos.copy()
       self.vel = self.initVel.copy()
+
+    self.i += 1
+  def loadWalk(self):
+    for i in range(8):
+      self.walkFrame.append(pg.image.load("assets\\sprites\\walkFrames\\Player_F" + str(i) + ".png"))
+    
