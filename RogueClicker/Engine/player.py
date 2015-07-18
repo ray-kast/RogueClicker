@@ -20,19 +20,19 @@ class Player(Mob):
 
   def update(self, dt):
     if self.i >= 8: self.i = 0
-    else: self.i += 1
 
     keys = pg.key.get_pressed()
 
     self.walkDir = keys[pg.K_d] - keys[pg.K_a]
 
-    if self.walkDir != 0: self.image = self.walkFrame[self.i] # LIST OUT OF RANGE ERROR - HAVEN'T FIXED YET
-
     self.isJumping = keys[pg.K_SPACE]
+    self.image = self.defImg if not self.isJumping else self.jumpImg 
+    
     if self.isJumping: self.inAir = True
     if self.isOnGround: self.inAir = False
-
-    self.image = self.defImg if not self.isJumping else self.jumpImg 
+    
+    if self.walkDir > 0:
+      self.image = self.walkFrame[self.i]
     
     if self.inAir: self.image = self.crouchImg
 
@@ -42,6 +42,7 @@ class Player(Mob):
       self.pos = self.initPos.copy()
       self.vel = self.initVel.copy()
 
+    self.i += 1
   def loadWalk(self):
     for i in range(8):
       self.walkFrame.append(pg.image.load("assets\\sprites\\walkFrames\\Player_F" + str(i) + ".png"))
