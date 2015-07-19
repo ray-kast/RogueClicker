@@ -10,12 +10,17 @@ class level():
     self.world = world
     #i want this to be an entire screen if possible. 
     self.asurf = pic
+    
     self.blocks = self.getblocks()
     info = pg.display.Info()
     self.w = info.current_w
     self.h = info.current_h
+    self.surf = pg.Surface([self.w,self.h])
+    size = 100
+    ents = []
     for block in self.blocks:
-      ents.append(Entity(self.world, np.multiply(block, size), (0, 0), surf, 1, self.world.envSprites))
+      print(np.multiply(block, size))
+      ents.append(Entity(self.world, np.multiply(block, size), (0, 0), self.surf, 1, self.world.envSprites))
 
   def getblocks(self):
     size = 9
@@ -33,12 +38,15 @@ class level():
     
     print(blocks)
     block = []
+    x = 0
     for i in blocks:
-      if blocks[i] == Colors.Black:
-        if i/9 < 1:
-          block[i] = ([i,1], 100)
+      
+      if i == (0,0,0):
+        if x/9 <1: 
+          block.append(([x,1], 100))
         else:
-          block[i] = ([(i-(9*(i//9)-1)),(i//2)], 100)
+          block.append(([(x-(9*(x//9)-1)),(x//9)], 100))
+      x+=1
 
     print( block)
     return block
