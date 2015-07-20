@@ -15,6 +15,7 @@ class World(Drawable):
     self.rect = self.surf.get_rect()
 
     self.playerSpawn = np.array([0, 0], np.float)
+    self.playerFinish = np.array([0, 0], np.float)
 
   def draw(self, game, dt):
     """Called when the attached Game draws a frame"""

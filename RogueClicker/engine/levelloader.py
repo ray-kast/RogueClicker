@@ -46,6 +46,10 @@ class level():
           if row < (size[1] - 1) \
             and self.asurf.get_at((col, row + 1))[0:3] != (255, 0, 0):
             self.world.playerSpawn = np.array(((col + .5) * 64, (row - .5) * 64), np.float)
+        if block == (0, 255, 0):
+          if row < (size[1] - 1) \
+            and self.asurf.get_at((col, row + 1))[0:3] != (0, 255, 0):
+            self.world.playerFinish = np.array(((col + .5) * 64, (row - .5) * 64), np.float)
       
     print(blocks)
     return blocks
