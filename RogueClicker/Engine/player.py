@@ -42,7 +42,7 @@ class Player(Mob):
     if self.walkDir > 0: self.faceLeft = False
     elif self.walkDir < 0: self.faceLeft = True
 
-    if not self.isOnGround:
+    if self.inAir:
       self.image = self.crouchImg
     
     if self.walkDir:
