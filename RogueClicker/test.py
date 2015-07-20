@@ -3,6 +3,7 @@ from engine.game import *
 from engine.menu import *
 from engine.player import *
 from engine.world import *
+from engine import levelloader
 
 class TestGame(Game):
   def __init__(self):
@@ -76,8 +77,6 @@ class TestGame(Game):
 
     self.world = World(self.win)
 
-    self.player = Player(self.world, (110, 110), (0, 0), self.world.dynSprites)
-
     surf = pg.Surface(self.scrRect.size)
 
     img = pg.image.load("assets\\sprites\\blocks\\metalSheet32x32.png")
@@ -93,23 +92,41 @@ class TestGame(Game):
 
     self.world.bkgdSprites.add(self.bkgd, layer = 0)
 
-    self.blocks = self.doBlocks([
-      (1, 4),
-      (2, 4),
-      (3, 4),
-      (4, 4),
-      (5, 4),
-      (6, 4),
-      (7, 4),
-      (8, 4),
-      (1, 2),
-      (2, 2),
-      (3, 2),
-      (4, 2),
-      (5, 2),
-      (6, 2),
-    ],64 )
+    self.pic = pg.image.load("assets\\levels\\level5.png")
 
+    level1 = levelloader.level(self.pic, self.world)
+    self.blocks = level1.getblocks
+    print(self.blocks)
+
+    self.player = Player(self.world, self.world.dynSprites)
+
+    '''
+    self.blocks = self.doBlocks([
+      (0, 0),
+      (1, 0),
+      (2, 1),
+      (3, 2),
+      (4, 3),
+      (5, 4),
+      (6, 5),
+      (7, 6),
+      (8, 7),
+      (9, 8),
+      (10, 9),
+      (11, 10),
+      (12, 11),
+      (13, 12),
+      (14, 12),
+      (15, 12),
+      (16, 12),
+      (17, 12),
+      (18, 12),
+      (20, 12),
+      (21, 12),
+      (22, 12),
+      (19, 12)
+    ],64 )
+    '''
     self.currDrawing = self.menu
 
   def play(self, btn):
