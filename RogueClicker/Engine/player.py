@@ -10,6 +10,7 @@ class Player(Mob):
 
     Mob.__init__(self, world, pos, vel, self.defImg, 1, *groups)
 
+    self.faceLeft = False
     self.walkFrame = []
     self.shootFrame = []
     self.loadWalk()
@@ -33,18 +34,29 @@ class Player(Mob):
     if self.isJumping: self.inAir = True
     if self.isOnGround: self.inAir = False
     
-    if self.walkDir > 0:
-      self.image = self.walkFrame[self.walk_f]
-    if self.walkDir < 0:
+    if self.walkDir > 0: self.faceLeft = False
+     
+    if self.walkDir < 0: self.faceLeft = True
+
+    if self.faceLeft and self.walkDir < 0:
       self.image = self.walkFrame[self.walk_f]
       self.image = pg.transform.flip(self.image, True, False)
+    elif self.faceLeft:
+      self.image = self.defImg
+      self.image = pg.transform.flip(self.image, True, False)
+    elif not self.faceLeft and self.walkDir > 0:
+      self.image = self.walkFrame[self.walk_f]
 
-    if self.inAir: self.image = self.crouchImg
+    if self.inAir and self.faceLeft:
+      self.image = self.crouchImg
+      self.image = pg.transform.flip(self.image, True, False)
+    elif self.inAir:
+      self.image = self.crouchImg
 
     if keys[pg.K_v]:
       self.walkDir = 0
       self.shoot()
-      if keys[pg.K_a]: self.image = pg.transform.flip(self.image, True, False)
+      if self.faceLeft: self.image = pg.transform.flip(self.image, True, False)
 
     Mob.update(self, dt)
 
