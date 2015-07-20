@@ -63,7 +63,7 @@ class Player(Mob):
     if self.rect.right < self.world.rect.left \
       or self.rect.left > self.world.rect.right \
       or self.rect.top > self.world.rect.bottom:
-      self.pos = self.initPos.copy()
+      self.pos = self.world.playerSpawn.copy()
       self.vel = self.initVel.copy()
 
     self.walk_f += 1
