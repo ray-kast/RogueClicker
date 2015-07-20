@@ -1,4 +1,5 @@
-﻿import numpy as np, pygame as pg
+﻿import numpy as np
+import pygame as pg
 
 class Entity(pg.sprite.Sprite):
   """A base in-game entity"""
@@ -40,6 +41,55 @@ class Entity(pg.sprite.Sprite):
     #self.lastRect = self.rect
     self.pos += self.vel * dt
 
+class StaticEntity(Entity):
+  def __init__(self, world, pos, vel, surf, scl, *groups):
+    Entity.__init__(self, world, pos, vel, surf, scl, *groups)
+
+    self.bounce = np.array([0, 0, 0, 0], dtype = np.float)
+    
+    self.Bounce = 0
+    self.BounceTop = self.BounceBottom = .2
+
+  @property
+  def Bounce(self):
+    return self.bounce.mean()
+
+  @Bounce.setter
+  def Bounce(self, value):
+    self.bounce.fill(-value)
+
+  @property
+  def BounceLeft(self):
+    return self.bounce[0]
+
+  @BounceLeft.setter
+  def BounceLeft(self, value):
+    self.bounce[0] = -value
+
+  @property
+  def BounceTop(self):
+    return self.bounce[1]
+
+  @BounceTop.setter
+  def BounceTop(self, value):
+    self.bounce[1] = -value
+
+  @property
+  def BounceRight(self):
+    return self.bounce[2]
+
+  @BounceRight.setter
+  def BounceRight(self, value):
+    self.bounce[2] = -value
+
+  @property
+  def BounceBottom(self):
+    return self.bounce[3]
+
+  @BounceBottom.setter
+  def BounceBottom(self, value):
+    self.bounce[3] = -value
+
 class DynEntity(Entity):
   """Represents a free-moving entity"""
   def __init__(self, world, pos, vel, surf, scl, *groups):
@@ -48,11 +98,40 @@ class DynEntity(Entity):
 
     self.isOnGround = False
 
+    self.Gravity = .001
+    self.AirFriction = .001
+    self.GroundFriction = .1
+
+  @property
+  def Gravity(self):
+    return self.gravity
+
+  @Gravity.setter
+  def Gravity(self, value):
+    self.gravity = float(value)
+
+  @property
+  def AirFriction(self):
+    return self.airFric
+
+  @AirFriction.setter
+  def AirFriction(self, value):
+    self.airFric = float(value)
+
+  @property
+  def GroundFriction(self):
+    return self.gndFric
+
+  @GroundFriction.setter
+  def GroundFriction(self, value):
+    self.gndFric = float(value)
+
   def update(self, dt):
     """Updates the entity every frame"""
-    self.vel[1] += .001 * dt
+    self.vel[1] += self.gravity * dt
 
-    self.vel[0] *= .5 ** (dt * (.5 if self.isOnGround else .001))
+    self.vel[0] *= .5 ** (dt * (self.gndFric if self.isOnGround else self.airFric))
+    self.vel[1] *= .5 ** (dt * self.airFric)
 
     Entity.update(self, dt)
 

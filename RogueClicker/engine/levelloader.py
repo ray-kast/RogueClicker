@@ -28,7 +28,7 @@ class level():
     for block in self.blocks:
       pos = np.multiply(block[0], block[1])
 
-      ents.append(Entity(self.world, pos, (0, 0), self.surf, 2, self.world.envSprites))
+      ents.append(StaticEntity(self.world, pos, (0, 0), self.surf, 2, self.world.envSprites))
       shEnts.append(Entity(self.world, np.add(pos, (8, 8)), (0, 0), self.shSurf, 2, self.world.bkgdSprites))
 
   def getblocks(self):

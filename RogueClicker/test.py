@@ -10,18 +10,19 @@ class TestGame(Game):
     Game.__init__(self)
 
   def doBlocks(self, blocks, size):
-    surf = pg.transform.scale(pg.image.load("assets\\sprites\\blocks\\metalBlock32x32.png"), (size, size))
-    shSurf = pg.Surface((size, size))
+    blocks = set(blocks)
 
-    shSurf.fill(Colors.Black)
-    shSurf.set_alpha(int(255 * .15))
+    surf = pg.transform.scale(pg.image.load("assets\\sprites\\blocks\\metalBlock32x32.png"), (size, size))
+    shSurf = pg.Surface((size, size), pg.SRCALPHA)
+
+    shSurf.fill((0, 0, 0, int(255 * .15)))
     
     ents = []
     shEnts = []
     
     for block in blocks:
       pos = np.multiply(block, size)
-      ents.append(Entity(self.world, pos, (0, 0), surf, 1, self.world.envSprites))
+      ents.append(StaticEntity(self.world, pos, (0, 0), surf, 1, self.world.envSprites))
       shEnts.append(Entity(self.world, np.add(pos, (8, 8)), (0, 0), shSurf, 1))
 
     self.world.bkgdSprites.add(*shEnts, layer = 1)

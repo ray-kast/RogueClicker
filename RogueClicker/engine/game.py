@@ -73,4 +73,3 @@ class Game:
       if self.doQuit: break
 
     self.deinit()
-
