@@ -20,16 +20,27 @@ class level():
     #25x14
     ents = []
     shEnts = []
+    vEnts = []
 
     self.shSurf = pg.Surface(self.surf.get_rect().size)
-
     self.shSurf.set_alpha(int(255 * .2))
+
+    self.vSurf = pg.Surface(self.surf.get_rect().size)
+    self.vSurf.fill(Colors.Green)
+    self.vSurf.set_alpha(int(255 * .25))
 
     for block in self.blocks:
       pos = np.multiply(block[0], block[1])
 
-      ents.append(StaticEntity(self.world, pos, (0, 0), self.surf, 2, self.world.envSprites))
-      shEnts.append(Entity(self.world, np.add(pos, (8, 8)), (0, 0), self.shSurf, 2, self.world.bkgdSprites))
+      if block[2] == 0:
+        ents.append(StaticEntity(self.world, pos, (0, 0), self.surf, 2, self.world.envSprites))
+        shEnts.append(Entity(self.world, np.add(pos, (8, 8)), (0, 0), self.shSurf, 2))
+
+      elif block[2] == 1:
+        vEnts.append(Entity(self.world, pos, (0, 0), self.vSurf, 2))
+
+    self.world.bkgdSprites.add(*shEnts, layer = 1)
+    self.world.bkgdSprites.add(*vEnts, layer = 2)
 
   def getblocks(self):
     size = 16
@@ -41,18 +52,15 @@ class level():
         block = self.asurf.get_at((col, row))[0:3]
 
         if block == (0, 0, 0):
-          blocks.append(([col, row], 64))
+          blocks.append(([col, row], 64, 0))
         elif block == (255, 0, 0):
           if row < (size[1] - 1) \
             and self.asurf.get_at((col, row + 1))[0:3] != (255, 0, 0):
             self.world.playerSpawn = np.array(((col + .5) * 64, (row - .5) * 64), np.float)
         elif block == (0, 255, 0):
-          if row < (size[1] - 1) \
-            and self.asurf.get_at((col, row + 1))[0:3] != (0, 255, 0):
-            self.world.playerFinish = np.array(((col + .5) * 64, (row - .5) * 64), np.float)
+          blocks.append(([col, row], 64, 1))
         elif block != (255, 255, 255):
           print("Unknown color {0} at ({1}, {2})".format(block, (col, row)))
-      
-    print(blocks)
+    
     return blocks
 

@@ -93,41 +93,13 @@ class TestGame(Game):
 
     self.world.bkgdSprites.add(self.bkgd, layer = 0)
 
-    self.pic = pg.image.load("assets\\levels\\level14.png")
+    self.pic = pg.image.load("assets\\levels\\002\\003.png")
 
     level1 = levelloader.level(self.pic, self.world)
     self.blocks = level1.getblocks
-    print(self.blocks)
 
     self.player = Player(self.world, self.world.dynSprites)
 
-    '''
-    self.blocks = self.doBlocks([
-      (0, 0),
-      (1, 0),
-      (2, 1),
-      (3, 2),
-      (4, 3),
-      (5, 4),
-      (6, 5),
-      (7, 6),
-      (8, 7),
-      (9, 8),
-      (10, 9),
-      (11, 10),
-      (12, 11),
-      (13, 12),
-      (14, 12),
-      (15, 12),
-      (16, 12),
-      (17, 12),
-      (18, 12),
-      (20, 12),
-      (21, 12),
-      (22, 12),
-      (19, 12)
-    ],64 )
-    '''
     self.currDrawing = self.menu
 
   def play(self, btn):
