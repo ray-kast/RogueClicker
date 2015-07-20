@@ -26,7 +26,7 @@ class Player(Mob):
 
     self.inAir = False
 
-  def update(self, dt):
+  def update(self, dt, dMouse):
     keys = pg.key.get_pressed()
     btns = pg.mouse.get_pressed()
 
@@ -59,6 +59,8 @@ class Player(Mob):
       if self.faceLeft: self.image = pg.transform.flip(self.image, True, False)
 
     Mob.update(self, dt)
+
+    self.vel += np.multiply(dMouse, .001 * dt)
 
     if self.rect.right < self.world.rect.left \
       or self.rect.left > self.world.rect.right \

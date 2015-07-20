@@ -24,7 +24,7 @@ class World(Drawable):
 
     self.bkgdSprites.update(dt)
     self.envSprites.update(dt)
-    self.dynSprites.update(dt)
+    self.dynSprites.update(dt, dMouse)
 
     for sprite in self.dynSprites:
       spriteCollides = False
