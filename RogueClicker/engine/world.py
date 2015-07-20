@@ -16,8 +16,6 @@ class World(Drawable):
 
   def draw(self, game, dt):
     """Called when the attached Game draws a frame"""
-    self.surf.fill(Colors.Green)
-
     dMouse = np.subtract(pg.mouse.get_pos(), self.rect.center)
     pg.mouse.set_pos(self.rect.centerx, self.rect.centery)
 
