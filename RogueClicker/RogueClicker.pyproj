@@ -90,7 +90,6 @@
     <Content Include="assets\sprites\playerInAir.png" />
     <Content Include="assets\sprites\playerJumping.png" />
     <Content Include="assets\sprites\playerPistol.png" />
-    <Content Include="assets\sprites\playerWalk.png" />
     <Content Include="assets\sprites\shootFrames\playerPistol_f0.png" />
     <Content Include="assets\sprites\shootFrames\playerPistol_f1.png" />
     <Content Include="assets\sprites\shootFrames\playerPistol_f2.png" />
