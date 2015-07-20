@@ -42,14 +42,16 @@ class level():
 
         if block == (0, 0, 0):
           blocks.append(([col, row], 64))
-        if block == (255, 0, 0):
+        elif block == (255, 0, 0):
           if row < (size[1] - 1) \
             and self.asurf.get_at((col, row + 1))[0:3] != (255, 0, 0):
             self.world.playerSpawn = np.array(((col + .5) * 64, (row - .5) * 64), np.float)
-        if block == (0, 255, 0):
+        elif block == (0, 255, 0):
           if row < (size[1] - 1) \
             and self.asurf.get_at((col, row + 1))[0:3] != (0, 255, 0):
             self.world.playerFinish = np.array(((col + .5) * 64, (row - .5) * 64), np.float)
+        elif block != (255, 255, 255):
+          print("Unknown color {0} at ({1}, {2})".format(block, (col, row)))
       
     print(blocks)
     return blocks
