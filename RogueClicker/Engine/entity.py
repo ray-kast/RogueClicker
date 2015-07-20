@@ -100,7 +100,7 @@ class DynEntity(Entity):
 
     self.Gravity = .001
     self.AirFriction = .001
-    self.GroundFriction = .5
+    self.GroundFriction = .15
 
   @property
   def Gravity(self):

@@ -10,9 +10,9 @@ class Mob(DynEntity):
     self.walkDir = 0
     self.isJumping = False
 
-    self.AirSpeed = .5
-    self.GroundSpeed = 6
-    self.JumpSpeed = 18000
+    self.AirSpeed = .75
+    self.GroundSpeed = .45
+    self.JumpSpeed = 18500
 
   @property
   def AirSpeed(self):
