@@ -48,7 +48,7 @@ class StaticEntity(Entity):
     self.bounce = np.array([0, 0, 0, 0], dtype = np.float)
     
     self.Bounce = 0
-    self.BounceTop = self.BounceBottom = .2
+    self.BounceTop = self.BounceBottom = .1
 
   @property
   def Bounce(self):
@@ -100,7 +100,7 @@ class DynEntity(Entity):
 
     self.Gravity = .001
     self.AirFriction = .001
-    self.GroundFriction = .1
+    self.GroundFriction = .5
 
   @property
   def Gravity(self):

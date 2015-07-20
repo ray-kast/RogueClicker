@@ -34,21 +34,21 @@ class Player(Mob):
 
     self.isJumping = keys[pg.K_SPACE] or keys[pg.K_w]
 
-    self.image = self.defImg if not self.isJumping else self.jumpImg 
-    
+    self.image = self.defImg
+
     if self.isJumping: self.inAir = True
     elif self.isOnGround: self.inAir = False
     
     if self.walkDir > 0: self.faceLeft = False
     elif self.walkDir < 0: self.faceLeft = True
      
-    if self.inAir:
-      self.image = self.crouchImg
-
     if self.walkDir:
       self.walkTime = (self.walkTime + (dt * self.walkFrameSpeed)) % self.numWalkFrames
       self.image = self.walkFrames[int(self.walkTime)]
     else: self.walkTime = 0
+
+    if self.inAir:
+      self.image = self.jumpImg if self.isJumping else self.crouchImg
 
     if self.faceLeft:
       self.image = pg.transform.flip(self.image, True, False)
