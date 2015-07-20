@@ -3,12 +3,14 @@ from engine.mob import *
 import pygame as pg
 
 class Player(Mob):
-  def __init__(self, world, pos, vel, *groups):
+  def __init__(self, world, *groups):
     self.defImg = pg.image.load("assets\\sprites\\player.png")
     self.jumpImg = pg.image.load("assets\\sprites\\playerJumping.png")
     self.crouchImg = pg.image.load("assets\\sprites\\playerCrouch.png")
 
-    Mob.__init__(self, world, pos, vel, self.defImg, 1, *groups)
+    self.initVel = np.array((0, 0), np.float)
+
+    Mob.__init__(self, world, world.playerSpawn, self.initVel.copy(), self.defImg, 1, *groups)
 
     self.faceLeft = False
     self.walkFrame = []
@@ -17,8 +19,6 @@ class Player(Mob):
     self.loadShoot()
     self.walk_f = 0
 
-    self.initPos = self.pos.copy()
-    self.initVel = self.vel.copy()
     self.inAir = False
 
   def update(self, dt):
@@ -61,7 +61,7 @@ class Player(Mob):
     Mob.update(self, dt)
 
     if not self.world.rect.colliderect(self.rect):
-      self.pos = self.initPos.copy()
+      self.pos = self.world.playerSpawn.copy()
       self.vel = self.initVel.copy()
 
     self.walk_f += 1

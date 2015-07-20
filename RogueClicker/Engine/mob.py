@@ -11,7 +11,7 @@ class Mob(DynEntity):
     self.isJumping = False
 
   def update(self, dt):
-    self.vel[0] += self.walkDir * (.5 if self.isOnGround else .003)
+    self.vel[0] += self.walkDir * (10 if self.isOnGround else .003)
     self.vel[1] += -.5 if self.isJumping and self.isOnGround else 0
 
     DynEntity.update(self, dt)

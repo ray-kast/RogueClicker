@@ -1,4 +1,5 @@
-﻿from engine.entity import *
+﻿import numpy as np
+from engine.entity import *
 from engine.game import *
 from engine.menu import *
 from engine.player import *
@@ -18,11 +19,17 @@ class level():
     self.surf = pg.image.load("assets\\sprites\\blocks\\metalBlock32x32.png")
     #25x14
     ents = []
+    shEnts = []
+
+    self.shSurf = pg.Surface(self.surf.get_rect().size)
+
+    self.shSurf.set_alpha(int(255 * .2))
+
     for block in self.blocks:
-      print(block[0])
-      print([((block[0][0] * block[1])),(block[0][1] * block[1])])
-      
-      ents.append(Entity(self.world, [(block[0][0] * block[1]),(block[0][1] * block[1])], (0, 0), self.surf, 2, self.world.envSprites))
+      pos = np.multiply(block[0], block[1])
+
+      ents.append(Entity(self.world, pos, (0, 0), self.surf, 2, self.world.envSprites))
+      shEnts.append(Entity(self.world, np.add(pos, (8, 8)), (0, 0), self.shSurf, 2, self.world.bkgdSprites))
 
   def getblocks(self):
     size = 16
@@ -38,7 +45,7 @@ class level():
         if block == (255, 0, 0):
           if row < (size[1] - 1) \
             and self.asurf.get_at((col, row + 1))[0:3] != (255, 0, 0):
-            self.spawn = (col * 64, (row + .5) * 64) #Set spawn point
+            self.world.playerSpawn = np.array(((col + .5) * 64, (row - .5) * 64), np.float)
       
     print(blocks)
     return blocks
