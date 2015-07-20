@@ -12,8 +12,8 @@
     <OutputPath>.</OutputPath>
     <Name>RogueClicker</Name>
     <RootNamespace>RogueClicker</RootNamespace>
-    <InterpreterId>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</InterpreterId>
-    <InterpreterVersion>3.4</InterpreterVersion>
+    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
+    <InterpreterVersion>3.2</InterpreterVersion>
     <IsWindowsApplication>True</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -32,6 +32,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="engine\game.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="engine\level.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="engine\levelloader.py" />
@@ -63,7 +66,7 @@
     <Folder Include="assets\music\" />
     <Folder Include="assets\sounds\" />
     <Folder Include="assets\sprites\" />
-    <Folder Include="assets\sprites\Blocks\" />
+    <Folder Include="assets\sprites\blocks\" />
     <Folder Include="assets\sprites\shootFrames\" />
     <Folder Include="assets\sprites\walkFrames\" />
     <Folder Include="engine\" />
@@ -71,19 +74,18 @@
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.2" />
-    <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\3.4" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\fonts\coders_crux.ttf" />
     <Content Include="assets\fonts\FreePixel.ttf" />
     <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
     <Content Include="assets\fonts\uni0553.ttf" />
-    <Content Include="assets\sprites\Blocks\metalBlock32x32.png" />
-    <Content Include="assets\sprites\Blocks\metalBlock64x32.png" />
-    <Content Include="assets\sprites\Blocks\metalBlock96x96.png" />
-    <Content Include="assets\sprites\Blocks\metalPillar32x64.png" />
-    <Content Include="assets\sprites\Blocks\metalSheet32x32.png" />
-    <Content Include="assets\sprites\Blocks\metalSheet96x96.png" />
+    <Content Include="assets\sprites\blocks\metalBlock32x32.png" />
+    <Content Include="assets\sprites\blocks\metalBlock64x32.png" />
+    <Content Include="assets\sprites\blocks\metalBlock96x96.png" />
+    <Content Include="assets\sprites\blocks\metalPillar32x64.png" />
+    <Content Include="assets\sprites\blocks\metalSheet32x32.png" />
+    <Content Include="assets\sprites\blocks\metalSheet96x96.png" />
     <Content Include="assets\music\000.wav" />
     <Content Include="assets\sprites\player.png" />
     <Content Include="assets\sprites\playerCrouch.png" />
