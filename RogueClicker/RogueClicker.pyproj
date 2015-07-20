@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\fonts\" />
+    <Folder Include="assets\music\" />
     <Folder Include="assets\sounds\" />
     <Folder Include="assets\sprites\" />
     <Folder Include="assets\sprites\walkFrames\" />
@@ -74,6 +75,7 @@
     <Content Include="assets\fonts\FreePixel.ttf" />
     <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
     <Content Include="assets\fonts\uni0553.ttf" />
+    <Content Include="assets\music\000.wav" />
     <Content Include="assets\sprites\player.png" />
     <Content Include="assets\sprites\playerCrouch.png" />
     <Content Include="assets\sprites\playerInAir.png" />
