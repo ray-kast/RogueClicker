@@ -93,7 +93,7 @@ class TestGame(Game):
 
     self.world.bkgdSprites.add(self.bkgd, layer = 0)
 
-    self.pic = pg.image.load("assets\\levels\\level8.png")
+    self.pic = pg.image.load("assets\\levels\\level10.png")
 
     level1 = levelloader.level(self.pic, self.world)
     self.blocks = level1.getblocks

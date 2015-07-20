@@ -79,6 +79,11 @@
     <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
     <Content Include="assets\fonts\uni0553.ttf" />
     <Content Include="assets\levels\level1.png" />
+    <Content Include="assets\levels\level10.png" />
+    <Content Include="assets\levels\level11.png" />
+    <Content Include="assets\levels\level12.png" />
+    <Content Include="assets\levels\level13.png" />
+    <Content Include="assets\levels\level14.png" />
     <Content Include="assets\levels\level2.png" />
     <Content Include="assets\levels\level3.png" />
     <Content Include="assets\levels\level4.png" />
@@ -86,6 +91,7 @@
     <Content Include="assets\levels\level6.png" />
     <Content Include="assets\levels\level7.png" />
     <Content Include="assets\levels\level8.png" />
+    <Content Include="assets\levels\level9.png" />
     <Content Include="assets\levels\Untitled.png" />
     <Content Include="assets\sprites\blocks\metalBlock32x32.png" />
     <Content Include="assets\sprites\blocks\metalBlock64x32.png" />
