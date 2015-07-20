@@ -10,14 +10,13 @@ class level():
     self.world = world
     #i want this to be an entire screen if possible. 
     self.asurf = pic
-    
+    self.spawn = ()
     self.blocks = self.getblocks()
     info = pg.display.Info()
     self.w = info.current_w
     self.h = info.current_h
     self.surf = pg.image.load("assets\\sprites\\blocks\\metalBlock32x32.png")
     #25x14
-    size = 100
     ents = []
     for block in self.blocks:
       print(block[0])
@@ -36,6 +35,10 @@ class level():
 
         if block == (0, 0, 0):
           blocks.append(([col, row], 64))
+        if block == (255, 0, 0):
+          if row < (size[1] - 1) \
+            and self.asurf.get_at((col, row + 1))[0:3] != (255, 0, 0):
+            self.spawn = (col * 64, (row + .5) * 64) #Set spawn point
       
     print(blocks)
     return blocks
