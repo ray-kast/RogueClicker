@@ -10,44 +10,36 @@ class level():
     self.world = world
     #i want this to be an entire screen if possible. 
     self.asurf = pic
-    
+    self.spawn = ()
     self.blocks = self.getblocks()
     info = pg.display.Info()
     self.w = info.current_w
     self.h = info.current_h
-    self.surf = pg.Surface([self.w,self.h])
-    size = 100
+    self.surf = pg.image.load("assets\\sprites\\blocks\\metalBlock32x32.png")
+    #25x14
     ents = []
     for block in self.blocks:
-      print(np.multiply(block, size))
-      ents.append(Entity(self.world, np.multiply(block, size), (0, 0), self.surf, 1, self.world.envSprites))
+      print(block[0])
+      print([((block[0][0] * block[1])),(block[0][1] * block[1])])
+      
+      ents.append(Entity(self.world, [(block[0][0] * block[1]),(block[0][1] * block[1])], (0, 0), self.surf, 2, self.world.envSprites))
 
   def getblocks(self):
-    size = 9
+    size = 16
     blocks = []
-    x = 0 
-    y = 0
-    while y<9:
-      blocks.append(self.asurf.get_at((x, y))[0:3])
-      
-      if x == 8:
-        y += 1
-        x = 0
-      else:
-        x+=1
-    
-    print(blocks)
-    block = []
-    x = 0
-    for i in blocks:
-      
-      if i == (0,0,0):
-        if x/9 <1: 
-          block.append(([x,1], 100))
-        else:
-          block.append(([(x-(9*(x//9)-1)),(x//9)], 100))
-      x+=1
+    size = self.asurf.get_rect().size
 
-    print( block)
-    return block
+    for row in range(size[1]):
+      for col in range(size[0]):
+        block = self.asurf.get_at((col, row))[0:3]
+
+        if block == (0, 0, 0):
+          blocks.append(([col, row], 64))
+        if block == (255, 0, 0):
+          if row < (size[1] - 1) \
+            and self.asurf.get_at((col, row + 1))[0:3] != (255, 0, 0):
+            self.spawn = (col * 64, (row + .5) * 64) #Set spawn point
+      
+    print(blocks)
+    return blocks
 

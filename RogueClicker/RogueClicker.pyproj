@@ -64,6 +64,7 @@
     <Folder Include="assets\sounds\" />
     <Folder Include="assets\sprites\" />
     <Folder Include="assets\sprites\blocks\" />
+    <Folder Include="assets\levels\" />
     <Folder Include="assets\sprites\shootFrames\" />
     <Folder Include="assets\sprites\walkFrames\" />
     <Folder Include="engine\" />
@@ -77,6 +78,7 @@
     <Content Include="assets\fonts\FreePixel.ttf" />
     <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
     <Content Include="assets\fonts\uni0553.ttf" />
+    <Content Include="assets\levels\Untitled.png" />
     <Content Include="assets\sprites\blocks\metalBlock32x32.png" />
     <Content Include="assets\sprites\blocks\metalBlock64x32.png" />
     <Content Include="assets\sprites\blocks\metalBlock96x96.png" />
