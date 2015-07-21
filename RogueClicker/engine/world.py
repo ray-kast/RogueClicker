@@ -54,7 +54,7 @@ class World(Drawable):
 
     self.bkgdSprites.add(self.bkgd, layer = 0)
 
-    self.levelcount = 20
+    self.levelcount = 0
 
   def advance(self, game):
     print(self.levelcount, "/", len(self.files))
