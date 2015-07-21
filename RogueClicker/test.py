@@ -9,7 +9,7 @@ class TestGame(Game):
   def __init__(self):
     Game.__init__(self)
     pg.mixer.init()
-    pg.mixer.music.load("assets\\music\\000.ogg")
+    pg.mixer.music.load("assets\\music\\Fly.ogg")
     pg.mixer.music.play(loops = 10000)
 
   def doBlocks(self, blocks, size):
