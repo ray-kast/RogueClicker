@@ -105,6 +105,7 @@
     <Content Include="assets\levels\004\002.png" />
     <Content Include="assets\levels\004\003.png" />
     <Content Include="assets\levels\004\004.png" />
+    <Content Include="assets\music\000.ogg" />
     <Content Include="assets\screenshots\001.png" />
     <Content Include="assets\sprites\blocks\metalBlock32x32.png" />
     <Content Include="assets\sprites\blocks\metalBlock64x32.png" />
