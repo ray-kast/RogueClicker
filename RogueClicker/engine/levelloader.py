@@ -28,7 +28,9 @@ class level():
     self.vSurf = pg.Surface(self.surf.get_rect().size)
     self.vSurf.fill(Colors.Green)
     self.vSurf.set_alpha(int(255 * .25))
-
+    self.width = self.w//25
+    self.height = self.h//14
+    pg.transform.smoothscale(self.surf, (self.width, self.height))
     for block in self.blocks:
       pos = np.multiply(block[0], block[1])
 
