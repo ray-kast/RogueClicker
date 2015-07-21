@@ -1,10 +1,11 @@
 ﻿import pygame as pg
 import numpy as np
+import os
 from engine.drawable import *
 from engine.entity import *
 from engine.color import *
 from engine import levelloader
-import os
+
 class World(Drawable):
   """Manages the player, entities, and environment of the levels"""
   def __init__(self, surf):
@@ -27,7 +28,6 @@ class World(Drawable):
               if split[1] == ".png":
                 self.files.append(fpath)
 
-    print(self.files)
     self.bkgdSprites = pg.sprite.LayeredUpdates()
     self.envSprites = pg.sprite.LayeredUpdates()
     self.dynSprites = pg.sprite.LayeredUpdates()
@@ -56,11 +56,14 @@ class World(Drawable):
 
     self.levelcount = 0
 
-  def advance(self, game):
-    print(self.levelcount, "/", len(self.files))
+  def begin(self, game):
+    self.levelcount = 0
 
+    self.advance(game)
+
+  def advance(self, game):
     if self.levelcount >= len(self.files):
-      game.postQuit()
+      game.finish()
       return
 
     self.bkgdSprites.remove(s for s in self.bkgdSprites if s != self.bkgd)
@@ -76,6 +79,11 @@ class World(Drawable):
     self.player.spawn()
 
     self.levelcount += 1
+
+  def event(self, event, game, dt):
+    if event.type == pg.KEYDOWN:
+      if event.key == pg.K_l:
+        self.advance(game)
 
   def draw(self, game, dt):
     """Called when the attached Game draws a frame"""

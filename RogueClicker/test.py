@@ -92,6 +92,11 @@ class TestGame(Game):
   def play(self, btn):
     self.win.fill(Colors.Green)
 
-    self.world.advance(self)
+    self.world.begin(self)
 
     self.currDrawing = self.world
+
+  def finish(self):
+    self.win.fill(Colors.Green)
+
+    self.currDrawing = self.menu

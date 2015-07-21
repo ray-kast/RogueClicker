@@ -56,12 +56,14 @@ class Game:
       for event in pg.event.get():
         if event.type == pg.QUIT:
           self.postQuit()
+          continue
         
         elif event.type == pg.KEYDOWN:
           if event.key == pg.K_ESCAPE:
             self.postQuit()
+            continue
 
-        else: self.currDrawing.event(event, self, dt)
+        self.currDrawing.event(event, self, dt)
 
       if self.doQuit: break
       
