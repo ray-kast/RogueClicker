@@ -25,14 +25,10 @@ class Game:
     """Performs initialization at the start of the game"""
     pg.init()
 
-    info = pg.display.Info()
+    self.scrRect.width = 1600
+    self.scrRect.height = 900
 
-    self.scrRect.width = info.current_w
-    self.scrRect.height = info.current_h
-
-    flags = pg.HWSURFACE | pg.DOUBLEBUF | pg.FULLSCREEN
-
-    self.win = pg.display.set_mode(self.scrRect.size, flags)
+    self.win = pg.display.set_mode(self.scrRect.size, pg.HWSURFACE | pg.DOUBLEBUF | pg.FULLSCREEN)
 
   def deinit(self):
     """Performs cleanup at the end of the game"""
