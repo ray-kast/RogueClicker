@@ -20,10 +20,11 @@ class Player(Mob):
     self.walkTime = 0
     self.numWalkFrames = 8
     self.walkFrameSpeed = .01
+    self.deathCount = 0
 
     self.loadWalk()
     self.loadShoot()
-
+    
     self.inAir = False
 
     self.world.player = self
@@ -71,7 +72,10 @@ class Player(Mob):
     if self.rect.right < self.world.rect.left \
       or self.rect.left > self.world.rect.right \
       or self.rect.top > self.world.rect.bottom:
+      self.deathCount += 1
       self.spawn()
+      print(self.deathCount)
+      
 
     self.walk_f += 1
 
