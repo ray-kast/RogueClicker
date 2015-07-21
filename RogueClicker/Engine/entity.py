@@ -1,11 +1,11 @@
 ﻿import numpy as np
 import pygame as pg
 
-class Entity(pg.sprite.Sprite):
+class Entity(pg.sprite.DirtySprite):
   """A base in-game entity"""
   def __init__(self, world, pos, vel, surf, scl, *groups):
     """Create a new instance of Entity"""
-    pg.sprite.Sprite.__init__(self, *groups)
+    pg.sprite.DirtySprite.__init__(self, *groups)
     
     self.world = world
 
@@ -130,8 +130,8 @@ class DynEntity(Entity):
     """Updates the entity every frame"""
     self.vel[1] += self.gravity * dt
 
-    self.vel[0] *= .5 ** (dt * (self.gndFric if self.isOnGround else self.airFric))
-    self.vel[1] *= .5 ** (dt * self.airFric)
+    self.vel[0] *= .5 ** ((self.gndFric if self.isOnGround else self.airFric) * dt)
+    self.vel[1] *= .5 ** (self.airFric * dt)
 
     Entity.update(self, dt)
 
