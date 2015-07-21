@@ -65,6 +65,7 @@
     <Folder Include="assets\levels\003\" />
     <Folder Include="assets\levels\004\" />
     <Folder Include="assets\music\" />
+    <Folder Include="assets\screenshots\" />
     <Folder Include="assets\sounds\" />
     <Folder Include="assets\sprites\" />
     <Folder Include="assets\sprites\blocks\" />
@@ -104,6 +105,7 @@
     <Content Include="assets\levels\004\002.png" />
     <Content Include="assets\levels\004\003.png" />
     <Content Include="assets\levels\004\004.png" />
+    <Content Include="assets\screenshots\001.png" />
     <Content Include="assets\sprites\blocks\metalBlock32x32.png" />
     <Content Include="assets\sprites\blocks\metalBlock64x32.png" />
     <Content Include="assets\sprites\blocks\metalBlock96x96.png" />
