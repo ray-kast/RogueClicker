@@ -75,7 +75,7 @@ class Player(Mob):
       self.deathCount += 1
       self.spawn()
       
-  self.walk_f += 1
+    self.walk_f += 1
 
   def loadWalk(self):
     for i in range(self.numWalkFrames):

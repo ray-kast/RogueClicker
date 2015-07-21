@@ -79,7 +79,7 @@ class TestGame(Game):
                 (x, y + rect.bottom * 2),
                 rect.size)
 
-    self.world = World(self.win)
+    self.world = World(self.win, self.font)
 
     surf = pg.Surface(self.scrRect.size)
 

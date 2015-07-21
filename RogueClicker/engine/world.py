@@ -6,12 +6,16 @@ from engine.drawable import *
 from engine.entity import *
 from engine.color import *
 from engine import levelloader
+from engine.player import *
+from test import *
 
 class World(Drawable):
   """Manages the player, entities, and environment of the levels"""
-  def __init__(self, surf):
+  def __init__(self, surf, font):
     """Create a new instance of World"""
     Drawable.__init__(self, surf)
+
+    self.font = font
 
     basePath = "assets\\levels"
     self.dirs = os.listdir(basePath)
@@ -41,6 +45,7 @@ class World(Drawable):
 
     img = pg.image.load("assets\\sprites\\blocks\\metalSheet32x32.png")
     size = np.multiply(img.get_rect().size, 2)
+ 
     scSize = self.surf.get_rect().size
 
     img = pg.transform.scale(img, size)
@@ -140,3 +145,5 @@ class World(Drawable):
     self.bkgdSprites.draw(self.surf)
     self.envSprites.draw(self.surf)
     self.dynSprites.draw(self.surf)
+
+    self.surf.blit(self.font.render(str(self.player.deathCount), True, Colors.White), (50, 50))
