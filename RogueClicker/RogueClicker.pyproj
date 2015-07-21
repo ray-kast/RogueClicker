@@ -79,6 +79,7 @@
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.2" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\music\Fly.ogg" />
     <Content Include="assets\fonts\coders_crux.ttf" />
     <Content Include="assets\fonts\FreePixel.ttf" />
     <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
@@ -113,7 +114,6 @@
     <Content Include="assets\sprites\blocks\metalPillar32x64.png" />
     <Content Include="assets\sprites\blocks\metalSheet32x32.png" />
     <Content Include="assets\sprites\blocks\metalSheet96x96.png" />
-    <Content Include="assets\music\000.wav" />
     <Content Include="assets\sprites\player.png" />
     <Content Include="assets\sprites\playerCrouch.png" />
     <Content Include="assets\sprites\playerInAir.png" />
