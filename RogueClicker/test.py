@@ -80,19 +80,6 @@ class TestGame(Game):
 
     surf = pg.Surface(self.scrRect.size)
 
-    img = pg.image.load("assets\\sprites\\blocks\\metalSheet32x32.png")
-    size = np.multiply(img.get_rect().size, 2)
-
-    img = pg.transform.scale(img, size)
-
-    for row in range(0, self.scrRect.height, size[1]):
-      for col in range(0, self.scrRect.width, size[0]):
-        surf.blit(img, (col, row))
-
-    self.bkgd = Entity(self.world, (0, 0), (0, 0), surf, 1)
-
-    self.world.bkgdSprites.add(self.bkgd, layer = 0)
-
     self.pic = pg.image.load("assets\\levels\\004\\003.png")
 
     level1 = levelloader.level(self.pic, self.world)
@@ -104,5 +91,7 @@ class TestGame(Game):
 
   def play(self, btn):
     self.win.fill(Colors.Green)
+
+    self.world.advance(self)
 
     self.currDrawing = self.world

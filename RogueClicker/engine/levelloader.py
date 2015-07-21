@@ -38,6 +38,7 @@ class level():
 
       elif block[2] == 1:
         vEnts.append(Entity(self.world, pos, (0, 0), self.vSurf, 2))
+        self.world.vEnts = vEnts
 
     self.world.bkgdSprites.add(*shEnts, layer = 2)
     self.world.bkgdSprites.add(*vEnts, layer = 1)
@@ -63,4 +64,5 @@ class level():
           print("Unknown color {0} at ({1}, {2})".format(block, (col, row)))
     
     return blocks
-
+  def newlevel(self, pic, world):
+    pass

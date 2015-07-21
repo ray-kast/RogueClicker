@@ -26,6 +26,12 @@ class Player(Mob):
 
     self.inAir = False
 
+    self.world.player = self
+
+  def spawn(self):
+    self.pos = self.world.playerSpawn.copy()
+    self.vel = self.initVel.copy()
+
   def update(self, dt, dMouse):
     keys = pg.key.get_pressed()
     btns = pg.mouse.get_pressed()
@@ -65,8 +71,7 @@ class Player(Mob):
     if self.rect.right < self.world.rect.left \
       or self.rect.left > self.world.rect.right \
       or self.rect.top > self.world.rect.bottom:
-      self.pos = self.world.playerSpawn.copy()
-      self.vel = self.initVel.copy()
+      self.spawn()
 
     self.walk_f += 1
 
