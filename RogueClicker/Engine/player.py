@@ -74,10 +74,8 @@ class Player(Mob):
       or self.rect.top > self.world.rect.bottom:
       self.deathCount += 1
       self.spawn()
-      print(self.deathCount)
       
-
-    self.walk_f += 1
+  self.walk_f += 1
 
   def loadWalk(self):
     for i in range(self.numWalkFrames):
@@ -93,4 +91,7 @@ class Player(Mob):
       self.image = self.shootFrames[1]
       self.image = self.shootFrames[2]
     else: self.image = self.shootFrames[2]
+
+  def getDeathCount(self):
+    return self.deathCount
     
