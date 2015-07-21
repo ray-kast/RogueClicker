@@ -25,8 +25,10 @@ class Game:
     """Performs initialization at the start of the game"""
     pg.init()
 
-    self.scrRect.width = 1600
-    self.scrRect.height = 900
+    info = pg.display.Info()
+
+    self.scrRect.width = info.current_w
+    self.scrRect.height = info.current_h
 
     self.win = pg.display.set_mode(self.scrRect.size, pg.HWSURFACE | pg.DOUBLEBUF | pg.FULLSCREEN)
 
@@ -47,7 +49,7 @@ class Game:
     self.clock.tick()
 
     while True:
-      dt = self.clock.tick(120)
+      dt = self.clock.tick()
       
       for event in pg.event.get():
         if event.type == pg.QUIT:

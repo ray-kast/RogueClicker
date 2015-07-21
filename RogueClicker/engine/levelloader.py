@@ -14,27 +14,32 @@ class level():
     self.spawn = ()
     self.blocks = self.getblocks()
     info = pg.display.Info()
-    self.w = info.current_w
-    self.h = info.current_h
+
     self.surf = pg.image.load("assets\\sprites\\blocks\\metalBlock32x32.png")
+
+    self.size = self.surf.get_rect().size
+    self.scl = 2
+
+    self.asize = np.multiply(self.size, self.scl)
+
     #25x14
     ents = []
     shEnts = []
     vEnts = []
 
-    self.shSurf = pg.Surface(self.surf.get_rect().size)
+    self.shSurf = pg.Surface(self.size)
     self.shSurf.set_alpha(int(255 * .2))
 
-    self.vSurf = pg.Surface(self.surf.get_rect().size)
+    self.vSurf = pg.Surface(self.size)
     self.vSurf.fill(Colors.Green)
     self.vSurf.set_alpha(int(255 * .25))
 
     for block in self.blocks:
-      pos = np.multiply(block[0], block[1])
-
+      pos = np.multiply(block[0], self.asize)
+      
       if block[2] == 0:
         ents.append(StaticEntity(self.world, pos, (0, 0), self.surf, 2, self.world.envSprites))
-        shEnts.append(Entity(self.world, np.add(pos, (8, 8)), (0, 0), self.shSurf, 2))
+        shEnts.append(Entity(self.world, np.add(pos, np.multiply(self.surf.get_rect().size, .25)), (0, 0), self.shSurf, 2))
 
       elif block[2] == 1:
         vEnts.append(Entity(self.world, pos, (0, 0), self.vSurf, 2))
