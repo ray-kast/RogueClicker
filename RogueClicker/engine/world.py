@@ -1,4 +1,5 @@
 ﻿import pygame as pg
+import math
 import numpy as np
 import os
 from engine.drawable import *
@@ -56,16 +57,7 @@ class World(Drawable):
 
     self.levelcount = 0
 
-  def begin(self, game):
-    self.levelcount = 0
-
-    self.advance(game)
-
-  def advance(self, game):
-    if self.levelcount >= len(self.files):
-      game.finish()
-      return
-
+  def load(self, n):
     self.bkgdSprites.remove(s for s in self.bkgdSprites if s != self.bkgd)
     self.envSprites.remove(s for s in self.envSprites)
     self.dynSprites.remove(s for s in self.dynSprites if s != self.player)
@@ -78,12 +70,30 @@ class World(Drawable):
 
     self.player.spawn()
 
-    self.levelcount += 1
+  def jump(self, game, n, doFinish = True):
+    self.levelcount = max(0, min(len(self.files) - 1, n))
+
+    if doFinish and (n < 0 \
+      or n >= len(self.files)):
+
+      game.finish()
+      return
+
+    self.load(self.levelcount)
+
+  def next(self, game, doFinish = True):
+    self.jump(game, self.levelcount + 1, doFinish)
+
+  def prev(self, game, doFinish = True):
+    self.jump(game, self.levelcount - 1, doFinish)
 
   def event(self, event, game, dt):
     if event.type == pg.KEYDOWN:
       if event.key == pg.K_l:
-        self.advance(game)
+        self.next(game, False)
+
+      elif event.key == pg.K_k:
+        self.prev(game, False)
 
   def draw(self, game, dt):
     """Called when the attached Game draws a frame"""
@@ -96,7 +106,7 @@ class World(Drawable):
     
     for ent in self.vEnts:
       if self.player.rect.colliderect(ent.rect):
-        self.advance(game)
+        self.next(game)
 
     for sprite in self.dynSprites:
       spriteCollides = False

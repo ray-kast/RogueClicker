@@ -80,10 +80,10 @@ class TestGame(Game):
 
     surf = pg.Surface(self.scrRect.size)
 
-    self.pic = pg.image.load("assets\\levels\\004\\003.png")
+    #self.pic = pg.image.load("assets\\levels\\004\\003.png")
 
-    level1 = levelloader.level(self.pic, self.world)
-    self.blocks = level1.getblocks
+    #level1 = levelloader.level(self.pic, self.world)
+    #self.blocks = level1.getblocks
 
     self.player = Player(self.world, self.world.dynSprites)
 
@@ -92,7 +92,7 @@ class TestGame(Game):
   def play(self, btn):
     self.win.fill(Colors.Green)
 
-    self.world.begin(self)
+    self.world.jump(self, 0)
 
     self.currDrawing = self.world
 
