@@ -93,13 +93,13 @@ class RogueClickerGame(Game):
     self.currDrawing = self.menu
 
   def play(self, btn):
+    pg.mouse.set_visible(False)
+
     self.win.fill(Colors.Green)
 
     self.world.begin(self)
 
     self.currDrawing = self.world
-
-    pg.mouse.set_visible(False)
 
   def finish(self):
     self.win.fill(Colors.Green)
