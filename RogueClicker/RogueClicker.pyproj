@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\fonts\" />
+    <Folder Include="assets\levels\000\" />
     <Folder Include="assets\levels\001\" />
     <Folder Include="assets\levels\002\" />
     <Folder Include="assets\levels\003\" />
@@ -79,11 +80,7 @@
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.2" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\music\Fly.ogg" />
-    <Content Include="assets\fonts\coders_crux.ttf" />
-    <Content Include="assets\fonts\FreePixel.ttf" />
-    <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
-    <Content Include="assets\fonts\uni0553.ttf" />
+    <Content Include="assets\levels\001\000.png" />
     <Content Include="assets\levels\001\001.png" />
     <Content Include="assets\levels\001\002.png" />
     <Content Include="assets\levels\001\003.png" />
@@ -92,20 +89,32 @@
     <Content Include="assets\levels\001\006.png" />
     <Content Include="assets\levels\001\007.png" />
     <Content Include="assets\levels\001\008.png" />
-    <Content Include="assets\levels\002\001.png" />
-    <Content Include="assets\levels\002\002.png" />
-    <Content Include="assets\levels\002\003.png" />
-    <Content Include="assets\levels\002\004.png" />
-    <Content Include="assets\levels\002\005.png" />
-    <Content Include="assets\levels\003\001.png" />
-    <Content Include="assets\levels\003\002.png" />
-    <Content Include="assets\levels\003\003.png" />
-    <Content Include="assets\levels\003\004.png" />
-    <Content Include="assets\levels\003\005.png" />
-    <Content Include="assets\levels\004\001.png" />
-    <Content Include="assets\levels\004\002.png" />
-    <Content Include="assets\levels\004\003.png" />
-    <Content Include="assets\levels\004\004.png" />
+    <Content Include="assets\levels\001\009.png" />
+    <Content Include="assets\levels\001\010.png" />
+    <Content Include="assets\levels\001\011.png" />
+    <Content Include="assets\levels\001\hehehe.png" />
+    <Content Include="assets\levels\002\011.png" />
+    <Content Include="assets\levels\002\012.png" />
+    <Content Include="assets\levels\002\015.png" />
+    <Content Include="assets\levels\002\016.png" />
+    <Content Include="assets\levels\002\017.png" />
+    <Content Include="assets\levels\002\level25.png" />
+    <Content Include="assets\levels\002\test.png" />
+    <Content Include="assets\levels\002\theWall.png" />
+    <Content Include="assets\levels\003\013.png" />
+    <Content Include="assets\levels\003\014.png" />
+    <Content Include="assets\levels\003\018.png" />
+    <Content Include="assets\levels\003\019.png" />
+    <Content Include="assets\levels\003\022.png" />
+    <Content Include="assets\levels\003\ICanSeeTheEnd.png" />
+    <Content Include="assets\levels\003\level23.png" />
+    <Content Include="assets\levels\004\020.png" />
+    <Content Include="assets\levels\004\021.png" />
+    <Content Include="assets\music\Fly.ogg" />
+    <Content Include="assets\fonts\coders_crux.ttf" />
+    <Content Include="assets\fonts\FreePixel.ttf" />
+    <Content Include="assets\fonts\Minecraftia-Regular.ttf" />
+    <Content Include="assets\fonts\uni0553.ttf" />
     <Content Include="assets\screenshots\001.png" />
     <Content Include="assets\sprites\blocks\metalBlock32x32.png" />
     <Content Include="assets\sprites\blocks\metalBlock64x32.png" />
