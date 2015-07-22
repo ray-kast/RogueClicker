@@ -66,6 +66,7 @@
     <Folder Include="assets\levels\003\" />
     <Folder Include="assets\levels\004\" />
     <Folder Include="assets\music\" />
+    <Folder Include="assets\txt\" />
     <Folder Include="assets\screenshots\" />
     <Folder Include="assets\sounds\" />
     <Folder Include="assets\sprites\" />
@@ -80,6 +81,7 @@
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.2" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\txt\funFacts.txt" />
     <Content Include="assets\levels\001\000.png" />
     <Content Include="assets\levels\001\001.png" />
     <Content Include="assets\levels\001\002.png" />
@@ -108,8 +110,8 @@
     <Content Include="assets\levels\003\022.png" />
     <Content Include="assets\levels\003\ICanSeeTheEnd.png" />
     <Content Include="assets\levels\003\level23.png" />
+    <Content Include="assets\levels\004\019.png" />
     <Content Include="assets\levels\004\020.png" />
-    <Content Include="assets\levels\004\021.png" />
     <Content Include="assets\music\Fly.ogg" />
     <Content Include="assets\fonts\coders_crux.ttf" />
     <Content Include="assets\fonts\FreePixel.ttf" />
