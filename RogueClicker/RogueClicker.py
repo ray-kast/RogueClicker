@@ -1,8 +1,8 @@
 ﻿import traceback
-from test import *
+from game import *
 
 try:
-  game = TestGame()
+  game = RogueClickerGame()
 
   game.run()
 except BaseException as e:

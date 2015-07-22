@@ -54,7 +54,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="RogueClicker.py" />
-    <Compile Include="test.py">
+    <Compile Include="game.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
