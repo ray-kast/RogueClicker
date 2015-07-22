@@ -126,13 +126,19 @@ class DynEntity(Entity):
   def GroundFriction(self, value):
     self.gndFric = float(value)
 
-  def update(self, dt):
-    """Updates the entity every frame"""
+  def updateForces(self, dt):
     self.vel[1] += self.gravity * dt
 
     self.vel[0] *= .5 ** ((self.gndFric if self.isOnGround else self.airFric) * dt)
     self.vel[1] *= .5 ** (self.airFric * dt)
 
+  def updatePos(self, dt):
     Entity.update(self, dt)
 
     self.isOnGround = False
+
+  def update(self, dt):
+    """Updates the entity every frame"""
+    self.updateForces(dt)
+
+    self.updatePos(dt)

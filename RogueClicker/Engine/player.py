@@ -65,9 +65,11 @@ class Player(Mob):
       self.shoot()
       if self.faceLeft: self.image = pg.transform.flip(self.image, True, False)
 
-    Mob.update(self, dt)
+    Mob.updateForces(self, dt)
 
-    #self.vel += np.multiply(dMouse, .001 * dt)
+    self.vel += np.multiply(dMouse, .0005 * dt)
+
+    Mob.updatePos(self, dt)
 
     if self.rect.right < self.world.rect.left \
       or self.rect.left > self.world.rect.right \

@@ -11,7 +11,7 @@ class Mob(DynEntity):
     self.isJumping = False
 
     self.AirSpeed = .75
-    self.GroundSpeed = .45
+    self.GroundSpeed = .085
     self.JumpSpeed = 18500
 
   @property
@@ -38,8 +38,16 @@ class Mob(DynEntity):
   def JumpSpeed(self, value):
     self.jmpSpeed = float(-value * math.sqrt(self.gravity) * self.airFric)
 
-  def update(self, dt):
+  def updateForces(self, dt):
+    DynEntity.updateForces(self, dt)
+
     self.vel[0] += self.walkDir * (self.gndSpeed if self.isOnGround else self.airSpeed) * dt
     self.vel[1] += self.jmpSpeed if self.isJumping and self.isOnGround else 0
 
-    DynEntity.update(self, dt)
+  def updatePos(self, dt):
+    DynEntity.updatePos(self, dt)
+
+  def update(self, dt):
+    self.updateForces(dt)
+
+    self.updatePos(dt)
