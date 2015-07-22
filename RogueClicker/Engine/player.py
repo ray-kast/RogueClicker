@@ -67,7 +67,7 @@ class Player(Mob):
 
     Mob.update(self, dt)
 
-    self.vel += np.multiply(dMouse, .001 * dt)
+    #self.vel += np.multiply(dMouse, .001 * dt)
 
     if self.rect.right < self.world.rect.left \
       or self.rect.left > self.world.rect.right \

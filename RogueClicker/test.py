@@ -10,7 +10,7 @@ class TestGame(Game):
     Game.__init__(self)
     pg.mixer.init()
     pg.mixer.music.load("assets\\music\\Fly.ogg")
-    pg.mixer.music.play(loops = 10000)
+    pg.mixer.music.play(loops = -1)
 
   def doBlocks(self, blocks, size):
     blocks = set(blocks)
@@ -99,7 +99,11 @@ class TestGame(Game):
 
     self.currDrawing = self.world
 
+    pg.mouse.set_visible(False)
+
   def finish(self):
     self.win.fill(Colors.Green)
 
     self.currDrawing = self.menu
+
+    pg.mouse.set_visible(True)
