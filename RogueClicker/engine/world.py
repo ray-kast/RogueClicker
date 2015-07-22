@@ -146,4 +146,4 @@ class World(Drawable):
     self.envSprites.draw(self.surf)
     self.dynSprites.draw(self.surf)
 
-    self.surf.blit(self.font.render(str(self.player.deathCount), True, Colors.White), (50, 50))
+    self.surf.blit(self.font.render("Deaths: " + str(self.player.deathCount), True, Colors.White), (8, 18))
