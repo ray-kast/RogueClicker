@@ -58,6 +58,8 @@ class World(Drawable):
     self.deathMsg = None
     self.lastDeathCount = 0
 
+    self.rnd = rand.Random()
+
     img = pg.image.load("assets\\sprites\\blocks\\metalSheet32x32.png")
     size = np.multiply(img.get_rect().size, 2)
  
@@ -173,7 +175,7 @@ class World(Drawable):
 
       self.deathMsgTime = self.maxDeathMsgTime
 
-      self.deathMsg = self.font.render(self.deathMsgs[rand.randrange(len(self.deathMsgs))].strip(), True, Colors.White)
+      self.deathMsg = self.font.render(self.deathMsgs[self.rnd.randrange(len(self.deathMsgs))].strip(), True, Colors.White)
 
       self.deathMsgSurf = pg.Surface(self.deathMsg.get_rect().size, pg.SRCALPHA)
 
