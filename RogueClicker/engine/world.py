@@ -3,6 +3,7 @@ import pygame.time as pt
 import math
 import numpy as np
 import os
+import random as rand
 import time
 from engine.drawable import *
 from engine.entity import *
@@ -48,6 +49,15 @@ class World(Drawable):
 
     self.startTime = 0
 
+    with open("assets\\txt\\funFacts.txt") as file:
+      self.deathMsgs = file.readlines()
+
+    self.deathMsgTime = 0
+    self.maxDeathMsgTime = 2000
+    self.deathMsgFade = 1000
+    self.deathMsg = None
+    self.lastDeathCount = 0
+
     img = pg.image.load("assets\\sprites\\blocks\\metalSheet32x32.png")
     size = np.multiply(img.get_rect().size, 2)
  
@@ -66,7 +76,6 @@ class World(Drawable):
     self.bkgdSprites.add(self.bkgd, layer = 0)
 
     self.levelcount = 0
-    self.deathline = 0
 
   def load(self, n):
     self.bkgdSprites.remove(s for s in self.bkgdSprites if s != self.bkgd)
@@ -112,9 +121,6 @@ class World(Drawable):
         self.prev(game, False)
 
   def draw(self, game, dt):
-
-    
-
     """Called when the attached Game draws a frame"""
     dMouse = np.subtract(pg.mouse.get_pos(), self.rect.center)
     pg.mouse.set_pos(self.rect.centerx, self.rect.centery)
@@ -162,14 +168,26 @@ class World(Drawable):
 
     self.surf.blit(self.font.render("Deaths: " + str(self.player.deathCount), True, Colors.White), (8, 18))
     
-    with open("assets\\txt\\funFacts.txt") as f:
-      self.deathtexts = f.readlines()
-      self.deathtext = self.deathtexts[(self.player.deathCount)%50]
-      self.deathtext = self.deathtext.rstrip()
+    if self.lastDeathCount != self.player.deathCount:
+      self.lastDeathCount = self.player.deathCount
 
+      self.deathMsgTime = self.maxDeathMsgTime
 
+      self.deathMsg = self.font.render(self.deathMsgs[rand.randrange(len(self.deathMsgs))].strip(), True, Colors.White)
 
-    self.surf.blit(self.font.render(" %s" % self.deathtext, True, Colors.White), (8, 48))
+      self.deathMsgSurf = pg.Surface(self.deathMsg.get_rect().size, pg.SRCALPHA)
+
+      self.deathMsgPos = np.subtract(self.surf.get_rect().center, self.deathMsg.get_rect().center)
+
+    if self.deathMsgTime > 0:
+      self.deathMsgTime = max(0, self.deathMsgTime - dt)
+
+      self.deathMsgSurf.blit(self.deathMsg, (0, 0))
+
+      if self.deathMsgTime < self.deathMsgFade:
+        self.deathMsgSurf.fill((255, 255, 255, int(255 * self.deathMsgTime / self.deathMsgFade)), None, pg.BLEND_RGBA_MULT)
+
+      self.surf.blit(self.deathMsgSurf, self.deathMsgPos)
 
     t = pt.get_ticks() - self.startTime
 
