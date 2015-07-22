@@ -14,7 +14,7 @@ class World(Drawable):
   def __init__(self, surf, font):
     """Create a new instance of World"""
     Drawable.__init__(self, surf)
-
+    self.deathtime = 120
     self.font = font
 
     basePath = "assets\\levels"
@@ -42,6 +42,7 @@ class World(Drawable):
     self.playerSpawn = np.array([0, 0], np.float)
     self.vEnts = []
     self.player = None
+    self.deathtext = ""
 
     img = pg.image.load("assets\\sprites\\blocks\\metalSheet32x32.png")
     size = np.multiply(img.get_rect().size, 2)
@@ -61,6 +62,7 @@ class World(Drawable):
     self.bkgdSprites.add(self.bkgd, layer = 0)
 
     self.levelcount = 0
+    self.deathline = 0
 
   def load(self, n):
     self.bkgdSprites.remove(s for s in self.bkgdSprites if s != self.bkgd)
@@ -101,6 +103,9 @@ class World(Drawable):
         self.prev(game, False)
 
   def draw(self, game, dt):
+
+    
+
     """Called when the attached Game draws a frame"""
     dMouse = np.subtract(pg.mouse.get_pos(), self.rect.center)
     pg.mouse.set_pos(self.rect.centerx, self.rect.centery)
@@ -147,3 +152,12 @@ class World(Drawable):
     self.dynSprites.draw(self.surf)
 
     self.surf.blit(self.font.render("Deaths: " + str(self.player.deathCount), True, Colors.White), (8, 18))
+    
+    with open("assets\\txt\\funFacts.txt") as f:
+      self.deathtexts = f.readlines()
+      self.deathtext = self.deathtexts[(self.player.deathCount)%50]
+      self.deathtext = self.deathtext.rstrip()
+
+
+
+    self.surf.blit(self.font.render(" %s" % self.deathtext, True, Colors.White), (8, 48))
