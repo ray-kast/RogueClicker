@@ -53,7 +53,7 @@ class World(Drawable):
       self.deathMsgs = file.readlines()
 
     self.deathMsgTime = 0
-    self.maxDeathMsgTime = 2000
+    self.maxDeathMsgTime = 3000
     self.deathMsgFade = 1000
     self.deathMsg = None
     self.lastDeathCount = 0
