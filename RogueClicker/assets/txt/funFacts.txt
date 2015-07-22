@@ -35,7 +35,107 @@ How many times are you going to die before you give up?
 Yes - we're sure you can beat this.  We playtested it.
 This level has a 1% success rate.  I believe in you.
 Are you sure you know the controls?
-I am disapoint
+I am disapointed
+Keep your spirits up.
+You did that on purpose, didn't you.
+Ahahahahahahaha.  That was me.  Laughing at you.
+Yes - that jump is possible.  I promise.
+I haven't seen anyone fail at this level before.
+I'm getting annoyed just watching you.
+We were originally going to add enemies.  Aren't you glad we didn't?
+Lasers kill.  Or they would, if they were in the game.
+I used to believe in you.
+Falling off the screen kills you.
+Do you like making us waste resources on clones?
+The screen doesn't wrap around.
+Are you colorblind?  The green is over there.
+Try landing on the block next time.
+Try landing on TOP of the blocks.
+There is no cake down there.
+Sorry - Anthony designed this level.
+Seriously, I'm getting tired of watching you fail.
+Please direct all level complaints to Anthony.
+I'm sorry.
+I enjoy hearing your screams.
+Is the music too scary for you?
+Player.get_rekt()
+This isn't Skydiving Simulator 2015.
+Why don't you just go back to Cookie Clicker?
+There aren't trampolines down there.
+Go home, you must be drunk.
+Try not to fail this time.
+This is your last life...or not.
+Your Konami code doesn't work here.
+Are you sure you want to be playing this?
+Are you done abusing Spaceman yet?
+Are you trying to be a rebel?
+The goal is not to die...
+You're not even halfway done.
+Chris could finish this level faster than you.
+I'm pretty sure an infinite number of monkies would beat this game faster than you.
+Sure, blame the lag.
+You didn't do the dew, did you?
+Another one bites the space-dust.
+It was the Illuminati.
+The exit wasn't that way.
+I'd prefer to be done before the next ice age.
+Are you looking for easter eggs?
+You just died.  Again.
+How many times are you going to die before you give up?
+Yes - we're sure you can beat this.  We playtested it.
+This level has a 1% success rate.  I believe in you.
+Are you sure you know the controls?
+I am disapointed
+Keep your spirits up.
+You did that on purpose, didn't you.
+Ahahahahahahaha.  That was me.  Laughing at you.
+Yes - that jump is possible.  I promise.
+I haven't seen anyone fail at this level before.
+I'm getting annoyed just watching you.
+We were originally going to add enemies.  Aren't you glad we didn't?
+Lasers kill.  Or they would, if they were in the game.
+I used to believe in you.
+Falling off the screen kills you.
+Do you like making us waste resources on clones?
+The screen doesn't wrap around.
+Are you colorblind?  The green is over there.
+Try landing on the block next time.
+Try landing on TOP of the blocks.
+There is no cake down there.
+Sorry - Anthony designed this level.
+Seriously, I'm getting tired of watching you fail.
+Please direct all level complaints to Anthony.
+I'm sorry.
+I enjoy hearing your screams.
+Is the music too scary for you?
+Player.get_rekt()
+This isn't Skydiving Simulator 2015.
+Why don't you just go back to Cookie Clicker?
+There aren't trampolines down there.
+Go home, you must be drunk.
+Try not to fail this time.
+This is your last life...or not.
+Your Konami code doesn't work here.
+Are you sure you want to be playing this?
+Are you done abusing Spaceman yet?
+Are you trying to be a rebel?
+The goal is not to die...
+You're not even halfway done.
+Chris could finish this level faster than you.
+I'm pretty sure an infinite number of monkies would beat this game faster than you.
+Sure, blame the lag.
+You didn't do the dew, did you?
+Another one bites the space-dust.
+It was the Illuminati.
+The exit wasn't that way.
+I'd prefer to be done before the next ice age.
+Are you looking for easter eggs?
+You just died.  Again.
+How many times are you going to die before you give up?
+Yes - we're sure you can beat this.  We playtested it.
+This level has a 1% success rate.  I believe in you.
+Are you sure you know the controls?
+I am disapointed
 Keep your spirits up.
 You did that on purpose, didn't you.
 Ahahahahahahaha.  That was me.  Laughing at you.
