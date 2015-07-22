@@ -5,7 +5,7 @@ from engine.player import *
 from engine.world import *
 from engine import levelloader
 
-class TestGame(Game):
+class RogueClickerGame(Game):
   def __init__(self):
     Game.__init__(self)
     pg.mixer.init()
@@ -95,7 +95,7 @@ class TestGame(Game):
   def play(self, btn):
     self.win.fill(Colors.Green)
 
-    self.world.jump(self, 0)
+    self.world.begin(self)
 
     self.currDrawing = self.world
 

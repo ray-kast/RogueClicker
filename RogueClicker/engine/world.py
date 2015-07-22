@@ -1,7 +1,9 @@
 ﻿import pygame as pg
+import pygame.time as pt
 import math
 import numpy as np
 import os
+import time
 from engine.drawable import *
 from engine.entity import *
 from engine.color import *
@@ -42,6 +44,8 @@ class World(Drawable):
     self.playerSpawn = np.array([0, 0], np.float)
     self.vEnts = []
     self.player = None
+
+    self.startTime = 0
 
     img = pg.image.load("assets\\sprites\\blocks\\metalSheet32x32.png")
     size = np.multiply(img.get_rect().size, 2)
@@ -91,6 +95,11 @@ class World(Drawable):
 
   def prev(self, game, doFinish = True):
     self.jump(game, self.levelcount - 1, doFinish)
+
+  def begin(self, game):
+    self.jump(game, 0, False)
+
+    self.startTime = pt.get_ticks()
 
   def event(self, event, game, dt):
     if event.type == pg.KEYDOWN:
@@ -147,3 +156,12 @@ class World(Drawable):
     self.dynSprites.draw(self.surf)
 
     self.surf.blit(self.font.render("Deaths: " + str(self.player.deathCount), True, Colors.White), (8, 18))
+
+    t = pt.get_ticks() - self.startTime
+
+    hrs, rem = divmod(t, 3600000)
+    mins, rem = divmod(rem, 60000)
+    secs, rem = divmod(rem, 1000)
+    frac = rem // 10
+
+    self.surf.blit(self.font.render("%02d:%02d:%02d.%02d" % (hrs, mins, secs, frac), True, Colors.White), (8, 66))
