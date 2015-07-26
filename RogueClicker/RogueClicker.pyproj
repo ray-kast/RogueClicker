@@ -142,6 +142,7 @@
     <Content Include="assets\sprites\walkFrames\Player_F5.png" />
     <Content Include="assets\sprites\walkFrames\Player_F6.png" />
     <Content Include="assets\sprites\walkFrames\Player_F7.png" />
+    <Content Include="run.cmd" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

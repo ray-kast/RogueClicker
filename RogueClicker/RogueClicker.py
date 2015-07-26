@@ -1,5 +1,6 @@
 ﻿import traceback
 from game import *
+import pygame
 
 try:
   game = RogueClickerGame()
