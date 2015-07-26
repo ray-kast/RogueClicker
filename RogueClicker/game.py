@@ -1,4 +1,4 @@
-﻿from engine.entity import *
+from engine.entity import *
 from engine.game import *
 from engine.menu import *
 from engine.player import *
@@ -65,7 +65,7 @@ class RogueClickerGame(Game):
                 hover,
                 act,
                 self.font,
-                "Options",
+                "Complaints",
                 (x, y + rect.bottom),
                 rect.size)
 
@@ -96,6 +96,10 @@ class RogueClickerGame(Game):
     pg.mouse.set_visible(False)
 
     self.win.fill(Colors.Green)
+
+    self.player.deathCount = 0
+
+    self.world.lastDeathCount = 0
 
     self.world.begin(self)
 

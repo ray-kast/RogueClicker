@@ -1,4 +1,4 @@
-﻿from engine.color import *
+from engine.color import *
 from engine.mob import *
 import pygame as pg
 
@@ -37,9 +37,9 @@ class Player(Mob):
     keys = pg.key.get_pressed()
     btns = pg.mouse.get_pressed()
 
-    self.walkDir = keys[pg.K_d] - keys[pg.K_a]
+    self.walkDir = (keys[pg.K_d] or keys[pg.K_RIGHT]) - (keys[pg.K_a] or keys[pg.K_LEFT])
 
-    self.isJumping = keys[pg.K_SPACE] or keys[pg.K_w]
+    self.isJumping = keys[pg.K_SPACE] or keys[pg.K_w] or keys[pg.K_UP]
 
     self.image = self.defImg
 
@@ -67,7 +67,7 @@ class Player(Mob):
 
     Mob.updateForces(self, dt)
 
-    self.vel += np.multiply(dMouse, .0005 * dt)
+    #self.vel += np.multiply(dMouse, .0005 * dt)
 
     Mob.updatePos(self, dt)
 

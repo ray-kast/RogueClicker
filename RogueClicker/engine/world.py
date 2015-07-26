@@ -1,4 +1,4 @@
-﻿import pygame as pg
+import pygame as pg
 import pygame.time as pt
 import math
 import numpy as np
@@ -121,6 +121,9 @@ class World(Drawable):
 
       elif event.key == pg.K_k:
         self.prev(game, False)
+
+      elif event.key == pg.K_ESCAPE:
+        game.finish()
 
   def draw(self, game, dt):
     """Called when the attached Game draws a frame"""

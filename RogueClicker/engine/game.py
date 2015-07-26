@@ -1,4 +1,4 @@
-﻿import pygame as pg
+import pygame as pg
 from engine.color import *
 
 class Game:
@@ -59,10 +59,6 @@ class Game:
         elif event.type == pg.KEYDOWN:
           if event.key == pg.K_p:
             pg.image.save(self.win, "assets\\screenshot.png")
-            continue
-
-          if event.key == pg.K_ESCAPE:
-            self.postQuit()
             continue
 
         self.currDrawing.event(event, self, dt)
