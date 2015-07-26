@@ -1,4 +1,4 @@
-import pygame as pg
+﻿import pygame as pg
 import pygame.time as pt
 import math
 import numpy as np
@@ -202,3 +202,4 @@ class World(Drawable):
     frac = rem // 10
 
     self.surf.blit(self.font.render("%02d:%02d:%02d.%02d" % (hrs, mins, secs, frac), True, Colors.White), (8, 76))
+    self.surf.blit(self.font.render(("Level: " + str(self.levelcount)), True, Colors.White), (8, 134))
