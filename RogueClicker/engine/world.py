@@ -202,4 +202,4 @@ class World(Drawable):
     frac = rem // 10
 
     self.surf.blit(self.font.render("%02d:%02d:%02d.%02d" % (hrs, mins, secs, frac), True, Colors.White), (8, 76))
-    self.surf.blit(self.font.render(("Level: " + str(self.levelcount)), True, Colors.White), (8, 134))
+    self.surf.blit(self.font.render(("Level: " + str(self.levelcount+1) + "/30"), True, Colors.White), (8, 134))
