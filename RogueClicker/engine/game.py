@@ -1,4 +1,4 @@
-import pygame as pg
+﻿import pygame as pg
 from engine.color import *
 
 class Game:
@@ -30,7 +30,7 @@ class Game:
     self.scrRect.width = info.current_w
     self.scrRect.height = info.current_h
 
-    self.win = pg.display.set_mode(self.scrRect.size, pg.HWSURFACE | pg.DOUBLEBUF | pg.FULLSCREEN)
+    self.win = pg.display.set_mode((1600, 900), pg.HWSURFACE | pg.DOUBLEBUF | pg.FULLSCREEN)
 
   def deinit(self):
     """Performs cleanup at the end of the game"""

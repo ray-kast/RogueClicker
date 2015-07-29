@@ -1,4 +1,4 @@
-from engine.entity import *
+﻿from engine.entity import *
 from engine.game import *
 from engine.menu import *
 from engine.player import *
@@ -36,6 +36,7 @@ class RogueClickerGame(Game):
     self.font = pg.font.Font("assets\\fonts\\FreePixel.ttf", 32)
 
     self.menu = Menu(self.win)
+    self.n = 0
 
     norm = ((99, 98, 87), Colors.Black)
     hover = ((125, 122, 106), Colors.White)
@@ -60,12 +61,12 @@ class RogueClickerGame(Game):
                 rect.size)
 
     Menu.Button(self.menu,
-                lambda btn: None,
+                self.options,
                 norm,
                 hover,
                 act,
                 self.font,
-                "Complaints",
+                "Options",
                 (x, y + rect.bottom),
                 rect.size)
 
@@ -111,3 +112,11 @@ class RogueClickerGame(Game):
     self.currDrawing = self.menu
 
     pg.mouse.set_visible(True)
+
+  def options(self, btn):
+    if self.n == 0:
+      self.win = pg.display.set_mode((1600, 900), pg.HWSURFACE | pg.DOUBLEBUF)
+      self.n = 1
+    elif self.n == 1: 
+      self.win = pg.display.set_mode(self.scrRect.size, pg.HWSURFACE | pg.DOUBLEBUF | pg.FULLSCREEN)
+      self.n = 0
