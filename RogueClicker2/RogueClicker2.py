@@ -1,4 +1,4 @@
-from engine.game import *
+﻿from engine.game import *
 from engine.gameprocess import *
 from gui.controls import *
 from gui.gui import *
@@ -25,7 +25,7 @@ try:
 
   btnStyle = ButtonStyle((0, 0, 0), (255, 255, 255), (255, 255, 255),
                          (99, 98, 87), (125, 122, 106), (209, 55, 2),
-                         pg.font.SysFont("Arial", 16, False, False))
+                         pg.font.Font("assets\\fonts\\FreePixel.ttf"))
 
   mainMenu.controls.add(Button(lambda: None, (10, 10), (300, 32), btnStyle, "Play"))
   mainMenu.controls.add(Button(lambda: None, (10, 52), (300, 32), btnStyle, "Options"))

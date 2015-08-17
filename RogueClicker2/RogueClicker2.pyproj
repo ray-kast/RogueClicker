@@ -53,6 +53,22 @@
     <Compile Include="RogueClicker2.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\" />
+    <Folder Include="assets\fonts\" />
+    <Folder Include="assets\levels\" />
+    <Folder Include="assets\levels\000\" />
+    <Folder Include="assets\levels\001\" />
+    <Folder Include="assets\levels\002\" />
+    <Folder Include="assets\levels\003\" />
+    <Folder Include="assets\levels\004\" />
+    <Folder Include="assets\music\" />
+    <Folder Include="assets\screenshots\" />
+    <Folder Include="assets\sounds\" />
+    <Folder Include="assets\sprites\" />
+    <Folder Include="assets\sprites\blocks\" />
+    <Folder Include="assets\sprites\shootFrames\" />
+    <Folder Include="assets\sprites\walkFrames\" />
+    <Folder Include="assets\txt\" />
     <Folder Include="engine\" />
     <Folder Include="levels\" />
     <Folder Include="gui\" />
