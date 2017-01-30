@@ -15,7 +15,7 @@ class level():
     self.blocks = self.getblocks()
     info = pg.display.Info()
 
-    self.surf = pg.image.load("assets\\sprites\\blocks\\metalBlock32x32.png")
+    self.surf = pg.image.load("assets/sprites/blocks/metalBlock32x32.png")
 
     self.size = self.surf.get_rect().size
     self.scl = 2

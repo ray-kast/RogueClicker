@@ -27,10 +27,10 @@ class Game:
 
     info = pg.display.Info()
 
-    self.scrRect.width = info.current_w
-    self.scrRect.height = info.current_h
+    self.scrRect.width = 1600
+    self.scrRect.height = 900
 
-    self.win = pg.display.set_mode((1600, 900), pg.HWSURFACE | pg.DOUBLEBUF | pg.FULLSCREEN)
+    self.win = pg.display.set_mode((1600, 900), pg.HWSURFACE | pg.DOUBLEBUF)
 
   def deinit(self):
     """Performs cleanup at the end of the game"""
@@ -58,7 +58,7 @@ class Game:
         
         elif event.type == pg.KEYDOWN:
           if event.key == pg.K_p:
-            pg.image.save(self.win, "assets\\screenshot.png")
+            pg.image.save(self.win, "assets/screenshot.png")
             continue
 
         self.currDrawing.event(event, self, dt)

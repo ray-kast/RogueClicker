@@ -4,9 +4,9 @@ import pygame as pg
 
 class Player(Mob):
   def __init__(self, world, *groups):
-    self.defImg = pg.image.load("assets\\sprites\\player.png")
-    self.jumpImg = pg.image.load("assets\\sprites\\playerJumping.png")
-    self.crouchImg = pg.image.load("assets\\sprites\\playerCrouch.png")
+    self.defImg = pg.image.load("assets/sprites/player.png")
+    self.jumpImg = pg.image.load("assets/sprites/playerJumping.png")
+    self.crouchImg = pg.image.load("assets/sprites/playerCrouch.png")
 
     self.initVel = np.array((0, 0), np.float)
 
@@ -81,11 +81,11 @@ class Player(Mob):
 
   def loadWalk(self):
     for i in range(self.numWalkFrames):
-      self.walkFrames.append(pg.image.load("assets\\sprites\\walkFrames\\Player_F" + str(i) + ".png"))
+      self.walkFrames.append(pg.image.load("assets/sprites/walkFrames/Player_F" + str(i) + ".png"))
 
   def loadShoot(self):
     for n in range(3):
-      self.shootFrames.append(pg.image.load("assets\\sprites\\shootFrames\\playerPistol_f" + str(n) + ".png"))
+      self.shootFrames.append(pg.image.load("assets/sprites/shootFrames/playerPistol_f" + str(n) + ".png"))
 
   def shoot(self):
     if self.image != self.shootFrames[2]:

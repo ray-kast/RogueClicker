@@ -39,7 +39,7 @@ class Menu(Drawable):
     for button in self.buttons:
       button.draw(game, dt)
 
-  class Button:
+  class Button(object):
     def __init__(self, menu, cmd, normal, hover, active, font, text, pos, size):
       self.surf = menu.surf
 
@@ -108,14 +108,15 @@ class Menu(Drawable):
     def mouseUp(self):
       if self.IsHovered:
         self.cmd(self)
+        self.recolor()
 
     def mouseOver(self):
-      pass
+      self.recolor()
 
     def mouseOut(self):
-      pass
+      self.recolor()
 
-  class Image:
+  class Image(object):
     def __init__(self, menu, img, pos):
       self.surf = menu.surf
 

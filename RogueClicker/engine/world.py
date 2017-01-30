@@ -20,7 +20,7 @@ class World(Drawable):
     self.deathtime = 120
     self.font = font
 
-    basePath = "assets\\levels"
+    basePath = "assets/levels"
     self.dirs = os.listdir(basePath)
     self.files = []
     for dir in self.dirs:
@@ -49,7 +49,7 @@ class World(Drawable):
 
     self.startTime = 0
 
-    with open("assets\\txt\\funFacts.txt") as file:
+    with open("assets/txt/funFacts.txt") as file:
       self.deathMsgs = file.readlines()
 
     self.deathMsgTime = 0
@@ -60,7 +60,7 @@ class World(Drawable):
 
     self.rnd = rand.Random()
 
-    img = pg.image.load("assets\\sprites\\blocks\\metalSheet32x32.png")
+    img = pg.image.load("assets/sprites/blocks/metalSheet32x32.png")
     size = np.multiply(img.get_rect().size, 2)
  
     scSize = self.surf.get_rect().size

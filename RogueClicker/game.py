@@ -9,13 +9,13 @@ class RogueClickerGame(Game):
   def __init__(self):
     Game.__init__(self)
     pg.mixer.init()
-    pg.mixer.music.load("assets\\music\\Fly.ogg")
+    pg.mixer.music.load("assets/music/Fly.ogg")
     pg.mixer.music.play(loops = -1)
 
   def doBlocks(self, blocks, size):
     blocks = set(blocks)
 
-    surf = pg.transform.scale(pg.image.load("assets\\sprites\\blocks\\metalBlock32x32.png"), (size, size))
+    surf = pg.transform.scale(pg.image.load("assets/sprites/blocks/metalBlock32x32.png"), (size, size))
     shSurf = pg.Surface((size, size), pg.SRCALPHA)
 
     shSurf.fill((0, 0, 0, int(255 * .15)))
@@ -33,7 +33,7 @@ class RogueClickerGame(Game):
   def init(self):
     Game.init(self)
 
-    self.font = pg.font.Font("assets\\fonts\\FreePixel.ttf", 32)
+    self.font = pg.font.Font("assets/fonts/FreePixel.ttf", 32)
 
     self.menu = Menu(self.win)
     self.n = 0
@@ -84,7 +84,7 @@ class RogueClickerGame(Game):
 
     surf = pg.Surface(self.scrRect.size)
 
-    #self.pic = pg.image.load("assets\\levels\\004\\003.png")
+    #self.pic = pg.image.load("assets/levels/004/003.png")
 
     #level1 = levelloader.level(self.pic, self.world)
     #self.blocks = level1.getblocks
